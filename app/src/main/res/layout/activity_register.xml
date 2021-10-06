@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.usahaq_skripsi.ui.register.Register">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rl_btn_next" />
+
+    <RelativeLayout
+        android:id="@+id/rl_btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true">
+
+        <ImageButton
+            android:id="@+id/btn_next"
+            android:contentDescription="@string/btn_next_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btn_register"
+            android:backgroundTint="@color/white"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/tv_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/oval_number"
+            tools:text="1"
+            android:fontFamily="@font/rubik_light"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textColor="@color/light_blue"
+            android:layout_marginTop="64dp"
+            android:layout_alignEnd="@id/btn_next"
+            android:layout_marginEnd="32dp"/>
+
+        <TextView
+            android:id="@+id/tv_nextAccept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Next"
+            android:fontFamily="@font/rubik_light"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="64dp"
+            android:layout_marginStart="32dp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="84dp">
+
+        <TextView
+            android:id="@+id/indicator1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/slider_dot"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="10dp"/>
+
+        <TextView
+            android:id="@+id/indicator2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/slider_dot"
+            android:textColor="@color/blue_button"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="10dp"/>
+        <TextView
+            android:id="@+id/indicator3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/blue_button"
+            android:text="@string/slider_dot"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>

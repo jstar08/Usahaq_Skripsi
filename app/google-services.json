@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1079470513347",
+    "project_id": "usahaqskripsi",
+    "storage_bucket": "usahaqskripsi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1079470513347:android:645de33da3b9f9820dd676",
+        "android_client_info": {
+          "package_name": "com.example.usahaq_skripsi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1079470513347-bm4vq6jemq4ulk9i1g8tjjiru5uf1asl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD3S_AKp1kC3552T5VYJoAUVnXWKcn8Pg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1079470513347-bm4vq6jemq4ulk9i1g8tjjiru5uf1asl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_userRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_poster"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="36dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_poster"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/user_image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="#CECECE" />
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_businessName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@id/cv_poster"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:layout_width="120dp"
+            android:layout_height="18dp"
+            android:background="#CECECE"  />
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_businesLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toEndOf="@id/cv_poster"
+        app:layout_constraintTop_toBottomOf="@id/shimmer_businessName"
+        app:layout_constraintBottom_toTopOf="@+id/line">
+
+        <View
+            android:layout_width="120dp"
+            android:layout_height="18dp"
+            android:background="#CECECE"  />
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/shimmer_businesLocation" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

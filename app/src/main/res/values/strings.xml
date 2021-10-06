@@ -1,0 +1,205 @@
+<resources>
+    <string name="app_name">Usahaq</string>
+    <string name="splash_screen">Splash Screen</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="easy_register_image">easy register image</string>
+    <string name="easy_register">Easy Register</string>
+    <string name="set_up_your_account_as_easy_just_by_your_hand">Set up your account as easy just by <br />
+        your hand</string>
+    <string name="button_next">button next</string>
+    <string name="slider">slider</string>
+    <string name="image_stock_everything">image stock everything</string>
+    <string name="stock_your_business_with_easy_br_re_stocking_and_integrating">Stock your business with easy <br />re-stocking and integrating</string>
+    <string name="stock_everything">Stock Everything</string>
+    <string name="let_s_go">Let\'s go</string>
+    <string name="lets_go_text">Go making</string>
+    <string name="logo">logo</string>
+    <string name="login">Login</string>
+    <string name="phone_number">Phone number</string>
+    <string name="phone_image">phone image</string>
+    <string name="fill_your_information">Fill your information</string>
+    <string name="full_name">Full name</string>
+    <string name="username">Username</string>
+    <string name="date_of_birth">Date of birth</string>
+    <string name="date_image">date image</string>
+    <string name="username_image">username_image</string>
+    <string name="have_an_account">Have an account?</string>
+    <string name="what_s_your_job">What\'s your job</string>
+    <string name="address">Address</string>
+    <string name="start_date">Start date</string>
+    <string name="company_name">Company name</string>
+    <string name="position">Position</string>
+    <string name="location">Location</string>
+    <string name="addresses">Addresses</string>
+    <string name="second_address">Second address</string>
+    <string name="company_image">company_image</string>
+    <string name="pick_way_to_verify">Pick way to verify</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="firebase_access_token">firebase_access_token</string>
+    <string name="product">Product</string>
+    <string name="img_user_gray">img_user_gray</string>
+    <string name="user_profile_picture">User profile picture</string>
+    <string name="add_photo">Add photo</string>
+    <string name="id_number">ID Number</string>
+    <string name="city">City</string>
+    <string name="post_code">Post code</string>
+    <string name="terms_of_service">Terms of Service</string>
+    <string name="tos_1">The following outlines the terms of use of the usahaq application. Before using any of usahaq services, you are required to read, understand and agree to these terms.</string>
+    <string name="privacy">Privacy</string>
+    <string name="tos_2">We have the right to update, modify, or otherwise alter these. all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this web site are protected by applicable capyright and trade mark law.</string>
+    <string name="tos_3">Please review the <font color="#343EDF">Privacy Policy</font>. By using this app, you agree to be bound by, and to comply with <font color="#343EDF">Term and Conditions.</font></string>
+    <string name="i_have_read_and_understand_the_terms_of_service">I have read and understand the terms of service.</string>
+    <string name="slider_dot">.</string>
+    <string name="btn_next_register">btn_next_register</string>
+    <string name="title_activity_dashboard">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="management">Management</string>
+    <string name="chat">Chat</string>
+    <string name="Profile">Profile</string>
+    <string name="user_image">Image User</string>
+    <string name="number_chat">number_chat</string>
+    <string name="outlets">outlets</string>
+    <string name="create_business">Create Business</string>
+    <string name="edit">Edit</string>
+    <string name="placeholder_name">Richard Beck</string>
+    <string name="placeholder_job">Vice President of Google</string>
+    <string name="recommendation">Recommendation</string>
+    <string name="product_recommendation">product_recommendation</string>
+    <string name="product_to_sell">Product to sell</string>
+    <string name="price">Price</string>
+    <string name="best_price_to_sell">Best price to sell</string>
+    <string name="best_location_for_you">Best location for you</string>
+    <string name="btn_addbusiness">add business</string>
+    <string name="business">Business</string>
+    <string name="business_name">Business name</string>
+    <string name="product_photo">Product photo</string>
+    <string name="stocks">Stocks</string>
+    <string name="capital_cost">Capital cost</string>
+    <string name="sell_price">Sell price</string>
+    <string name="clipboard_image">clipboard image</string>
+    <string name="clipboard_cardview">clipboard_cardview</string>
+    <string name="income">Income</string>
+    <string name="outcome">Outcome</string>
+    <string name="catalog">Catalog</string>
+    <string name="add_product">Add product</string>
+    <string name="sales_summary">Sales Summary</string>
+    <string name="gross_sales">COGS</string>
+    <string name="click_for_details">Click for details</string>
+    <string name="net_sales">Net Sales</string>
+    <string name="gross_profit">Gross Profit</string>
+    <string name="average_sales_per_transaction">Average Sales per Transaction</string>
+    <string name="transaction">Transaction</string>
+    <string name="query_hint">Find products you need..</string>
+    <string name="categories">Categories</string>
+    <string name="see_all">See All</string>
+    <string name="food">Food</string>
+    <string name="distance">20 near you</string>
+    <string name="beverages">Beverages</string>
+    <string name="groceries">Groceries</string>
+    <string name="value_by">Value By</string>
+    <string name="product1">Product 1</string>
+    <string name="price_valueby">$1.50</string>
+    <string name="img_canvas">img_canvas</string>
+    <string name="pro_feature">pro feature</string>
+    <string name="prediction_price">Prediction Price</string>
+    <string name="attendance">Today Attendance</string>
+    <string name="employee">Employee</string>
+    <string name="employee_profile">Employee Profile</string>
+    <string name="attendance_detail">Attendance</string>
+    <string name="this_month">This month</string>
+    <string name="performance">Performance</string>
+    <string name="access_token">access_token</string>
+    <string name="add_transaction">Add transaction</string>
+    <string name="stock">Stock :</string>
+    <string name="price_detail">Price :</string>
+    <string name="transaction_summary">Transaction Summary</string>
+    <string name="order_summary">Order Summary</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="payment_summary">Payment Summary</string>
+    <string name="total_payment">Total Payment</string>
+    <string name="tax_10">Tax(10%)</string>
+    <string name="new_transaction">New Transaction</string>
+    <string name="successful_transaction">Successful Transaction</string>
+    <string name="total">Total</string>
+    <string name="print">Print</string>
+    <string name="catalog_menu">Catalog Menu</string>
+    <string name="pro_cover">pro cover</string>
+    <string name="unlock_with_subscription">Unlock with Subscription</string>
+    <string name="pro_featurecapital">PRO Feature</string>
+    <string name="format_price">Rp.%.0f</string>
+    <string name="trends">Trends</string>
+    <string name="explore_the_trends">Explore The Trends</string>
+    <string name="enter_term">Enter a term</string>
+    <string name="trends_today">Trends Today</string>
+    <string name="dummy_term">Ariana Grande</string>
+    <string name="dummy_number_search">20k+ searches</string>
+    <string name="year_in_search">Year In Search</string>
+    <string name="succesful_transaction">Transaction Success</string>
+    <string name="explore">Explore</string>
+    <string name="btn_delete">btn delete</string>
+    <string name="btn_edit">btn_edit</string>
+    <string name="compare">+Compare</string>
+    <string name="filter">filter</string>
+    <string name="indonesia_past_30_days">Indonesia, past 30 days</string>
+    <string name="interest_by_subregion">Interest by subregion</string>
+    <string name="breakout">Breakout</string>
+    <string name="dummygraph">dummygraph</string>
+    <string name="filterCase">Filter</string>
+    <string name="country">Country</string>
+    <string name="period">Period</string>
+    <string name="add_to_comparison">Add to comparison</string>
+    <string name="search_on_google">Search on google</string>
+    <string name="indonesia">Indonesia</string>
+    <string name="popular_city">Popular city</string>
+    <string name="find_out_what_in">Find out what\'s in</string>
+    <string name="summary">Summary</string>
+    <string name="details">Details</string>
+    <string name="product_details">Product Details</string>
+    <string name="product_in_catalog_menu">Product in Catalog Menu</string>
+    <string name="edit_product">Edit Product</string>
+    <string name="delete_product">Delete Product</string>
+    <string name="delete">Delete</string>
+    <string name="date">Date</string>
+    <string name="related_queries">Related Queries</string>
+    <string name="predict_sales">Predict your sales</string>
+    <string name="sales">Sales</string>
+    <string name="sales_prediction">Sales Prediction</string>
+    <string name="prediction_product">Prediction Product</string>
+    <string name="current_sales">Current sales</string>
+    <string name="format_amount">%.0f</string>
+    <string name="password">Password</string>
+    <string name="don_t_have_an_account_yet">Don\'t have an account yet ?</string>
+
+    <string-array name="paymentMethod">
+        <item>Cash</item>
+        <item>E-Wallet</item>
+    </string-array>
+
+    <string-array name="relatedQueries">
+        <item>Top</item>
+        <item>Rising</item>
+    </string-array>
+
+    <string-array name="outlet">
+        <item>All Outlet</item>
+        <item>Outlet 1</item>
+        <item>Outlet 2</item>
+        <item>Outlet 3</item>
+        <item>Outlet 4</item>
+    </string-array>
+    <string name="title_activity_add_business">AddBusiness</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="logout">logout</string>
+
+
+</resources>

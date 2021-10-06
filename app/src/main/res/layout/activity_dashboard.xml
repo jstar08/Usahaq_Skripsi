@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.usahaq_skripsi.ui.dashboard.DashboardActivity">
+
+    <TextView
+        android:id="@+id/tv_fill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/rubik_light"
+        android:text="@string/dashboard"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_logout"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="12dp"
+        android:backgroundTint="@color/white"
+        android:contentDescription="@string/logout"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_accountProfile"
+        android:layout_width="340dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/light_blue"
+        app:cardCornerRadius="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_fill">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_accountName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="18dp"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Richard Beck" />
+
+            <TextView
+                android:id="@+id/tv_accountEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubik_light"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@id/tv_accountName"
+                app:layout_constraintTop_toBottomOf="@id/tv_accountName"
+                tools:text="richardBeck@gmail.com"
+                android:textSize="14sp"
+                android:layout_marginTop="6dp"/>
+
+            <TextView
+                android:id="@+id/tv_accountLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tv_accountName"
+                app:layout_constraintTop_toBottomOf="@id/tv_accountEmail"
+                tools:text="Joyo Green, Malang"
+                android:textColor="@color/white"
+                android:layout_marginTop="6dp"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/tv_postalCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/tv_accountName"
+                app:layout_constraintTop_toBottomOf="@id/tv_accountLocation"
+                tools:text="123456"
+                android:textColor="@color/white"
+                android:layout_marginTop="6dp"
+                android:textSize="14sp"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_accountImage"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:src="@drawable/logo"
+                android:layout_marginEnd="32dp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_createBusiness"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/cv_accountProfile">
+
+        <ImageView
+            android:id="@+id/iv_outlet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:contentDescription="@string/outlets"
+            android:src="@drawable/outlets"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/btn_createBusiness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:clickable="true"
+            android:text="@string/create_business"
+            android:textColor="@color/orange"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_outlet" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_businessCreated"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/cv_accountProfile">
+
+        <TextView
+            android:id="@+id/tv_business"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/business"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/tv_business"
+            app:shimmer_repeat_mode="restart"
+            app:shimmer_shape="radial">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/shimmer_itembusiness"></include>
+
+                <include layout="@layout/shimmer_itembusiness"></include>
+
+                <include layout="@layout/shimmer_itembusiness"></include>
+
+                <include layout="@layout/shimmer_itembusiness"></include>
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_business"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_business"
+            tools:listitem="@layout/item_business" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.getbase.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_addBusiness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/fab_add"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
