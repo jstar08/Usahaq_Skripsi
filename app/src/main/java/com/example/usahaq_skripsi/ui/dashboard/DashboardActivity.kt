@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.usahaq_skripsi.adapter.BusinessAdapter
 import com.example.usahaq_skripsi.databinding.ActivityDashboardBinding
+import com.example.usahaq_skripsi.ui.add.AddBusinessActivity
 import com.example.usahaq_skripsi.util.ViewModelFactory
 import com.example.usahaq_skripsi.viewmodel.AuthViewModel
 import com.example.usahaq_skripsi.viewmodel.BusinessViewModel
@@ -68,14 +69,10 @@ class DashboardActivity : AppCompatActivity() {
             binding.apply {
                 tvAccountEmail.text = it.customEmail
                 tvAccountName.text = it.name
-                tvAccountLocation.text = "${it.address}, ${it.city}"
-                tvPostalCode.text = it.postalCode
+                tvAccountLocation.text = it.location
+                tvPhoneNumber.text = it.phoneNumber
                 Glide.with(this@DashboardActivity).load(it.imageUrl).into(binding.ivAccountImage)
             }
         })
-    }
-
-    companion object{
-        var isCompleted = false
     }
 }

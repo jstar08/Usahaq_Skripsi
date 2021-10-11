@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <style name="tl_dashboard" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/tl_dashboard_text</item>
+    </style>
+
+    <style name="tl_dashboard_text" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:fontFamily">@font/rubik_regular</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="MyCustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="menu_labels_style">
+        <item name="android:textColor">@color/orange</item>
+    </style>
+
+    <style name="SwitchTheme" parent="Theme.AppCompat.Light">
+        <item name="android:colorControlActivated">@color/light_blue</item>
+    </style>
+
+</resources>

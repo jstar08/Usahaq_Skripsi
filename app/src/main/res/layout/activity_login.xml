@@ -35,8 +35,8 @@
         android:layout_marginTop="84dp"
         app:layout_constraintTop_toBottomOf="@id/tv_login"
         android:layout_marginStart="32dp"
-        android:inputType="text"
-        android:hint="@string/username"
+        android:inputType="textEmailAddress"
+        android:hint="@string/email"
         android:id="@+id/et_username"/>
 
     <EditText
@@ -45,7 +45,7 @@
         android:layout_marginTop="12dp"
         app:layout_constraintTop_toBottomOf="@id/et_username"
         android:layout_marginStart="32dp"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:hint="@string/password"
         android:id="@+id/et_password"/>
 
@@ -53,10 +53,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/et_username"
-        android:src="@drawable/phone"
+        android:src="@drawable/email"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="32dp"
-        android:contentDescription="@string/phone_image"/>
+        android:contentDescription="@string/email"/>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -65,7 +65,7 @@
         android:src="@drawable/lock"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="32dp"
-        android:contentDescription="@string/phone_image"/>
+        android:contentDescription="@string/password"/>
 
     <TextView
         android:id="@+id/tv_account"
@@ -93,15 +93,35 @@
         android:layout_marginBottom="12dp"
         android:layout_marginStart="4dp"/>
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginHorizontal="36dp"
+        android:layout_marginBottom="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/btn_login"
-        android:backgroundTint="@color/white"
-        android:id="@+id/btn_login"/>
+        app:cardCornerRadius="16dp"
+        android:backgroundTint="@color/light_blue">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_addbusiness"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
 
 
 

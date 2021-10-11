@@ -43,14 +43,10 @@ class RegisterPage1(private val mRegisterActivityListener: RegisterActivityListe
                 Register.isEmptyFields = true
                 etPassword.error = "This field can't be empty"
             }
-            if(etUsername.text.toString().trim().isEmpty()){
-                Register.isEmptyFields = true
-                etUsername.error = "This field can't be empty"
-            }
             if(etName.text.toString().trim().isNotEmpty()
                 && etEmail.text.toString().trim().isNotEmpty()
                 && etPassword.text.toString().trim().isNotEmpty()
-                && etUsername.text.toString().trim().isNotEmpty()){
+               ){
                 Register.isEmptyFields = false
             }
 

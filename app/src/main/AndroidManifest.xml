@@ -9,21 +9,33 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Usahaq_Skripsi">
+        android:theme="@style/Theme.Usahaq_Skripsi"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name=".ui.recommendation.sales.SalesActivity"
+            android:name=".ui.add.AddPurchaseActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.recommendation.price.PriceRecommendationActivity"
+            android:name=".ui.edit.EditBusinessActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.dashboard.AddBusinessActivity"
+            android:name=".ui.edit.EditProductActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.detail.product.DetailProductActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.add.AddProductActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.detail.business.DetailBusinessActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.add.AddBusinessActivity"
             android:exported="true"
             android:label="@string/title_activity_add_business"
             android:theme="@style/Theme.Usahaq_Skripsi.NoActionBar" />

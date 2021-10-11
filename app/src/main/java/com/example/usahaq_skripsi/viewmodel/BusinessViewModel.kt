@@ -12,5 +12,7 @@ class BusinessViewModel(private val mRepository: Repository) : ViewModel() {
 
     fun showlistBusiness(adapter: BusinessAdapter) : LiveData<List<Business>> = mRepository.showlistBusiness(adapter)
 
-    fun showDetailBusiness(businessId : Int) = mRepository.showDetailBusiness(businessId)
+    fun editBusiness(business: Business) = mRepository.editBusiness(business)
+
+    fun detaiBusiness(businessId : String) : LiveData<Business> = mRepository.DetailBusiness(businessId)
 }

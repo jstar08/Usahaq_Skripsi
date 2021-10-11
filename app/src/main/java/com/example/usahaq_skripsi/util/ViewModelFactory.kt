@@ -7,6 +7,7 @@ import com.example.usahaq_skripsi.di.Injection
 import com.example.usahaq_skripsi.repo.repository.Repository
 import com.example.usahaq_skripsi.viewmodel.AuthViewModel
 import com.example.usahaq_skripsi.viewmodel.BusinessViewModel
+import com.example.usahaq_skripsi.viewmodel.ProductViewModel
 
 class ViewModelFactory private constructor(private val mContentRepository: Repository) :
     ViewModelProvider.NewInstanceFactory() {
@@ -19,6 +20,9 @@ class ViewModelFactory private constructor(private val mContentRepository: Repos
             }
             modelClass.isAssignableFrom(BusinessViewModel::class.java) -> {
                 BusinessViewModel(mContentRepository) as T
+            }
+            modelClass.isAssignableFrom(ProductViewModel::class.java) -> {
+                ProductViewModel(mContentRepository) as T
             }
             else -> throw Throwable("Unknown ViewModel Class : " + modelClass.name)
         }

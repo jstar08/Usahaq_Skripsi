@@ -1,4 +1,4 @@
-package com.example.usahaq_skripsi.ui.dashboard
+package com.example.usahaq_skripsi.ui.add
 
 import android.app.Activity
 import android.content.Intent

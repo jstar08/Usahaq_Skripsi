@@ -72,7 +72,7 @@
     <string name="price">Price</string>
     <string name="best_price_to_sell">Best price to sell</string>
     <string name="best_location_for_you">Best location for you</string>
-    <string name="btn_addbusiness">add business</string>
+    <string name="btn_addbusiness">Add Business</string>
     <string name="business">Business</string>
     <string name="business_name">Business name</string>
     <string name="product_photo">Product photo</string>
@@ -200,6 +200,11 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="logout">logout</string>
+    <string name="email">Email</string>
+    <string name="add_purchase">Add Purchase</string>
+    <string name="description">Description:</string>
+    <string name="edit_business">Edit Business</string>
+    <string name="create_product">Create Product</string>
 
 
 </resources>

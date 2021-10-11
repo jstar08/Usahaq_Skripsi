@@ -20,6 +20,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         app:layout_constraintTop_toBottomOf="@id/logo"
+        android:layout_marginTop="48dp"
         android:src="@drawable/user_profile"
         android:contentDescription="@string/user_profile_picture"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,14 +46,14 @@
         android:layout_marginTop="32dp"
         app:layout_constraintTop_toBottomOf="@id/tv_addPhoto"
         android:layout_marginStart="32dp"
-        android:inputType="text"
-        android:hint="@string/id_number"
-        android:id="@+id/et_idNumber"/>
+        android:inputType="phone"
+        android:hint="@string/phone_number"
+        android:id="@+id/et_phoneNumber"/>
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/et_idNumber"
+        app:layout_constraintTop_toTopOf="@id/et_phoneNumber"
         android:src="@drawable/infocard"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="32dp"
@@ -62,58 +63,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        app:layout_constraintTop_toBottomOf="@id/et_idNumber"
+        app:layout_constraintTop_toBottomOf="@id/et_phoneNumber"
         android:layout_marginStart="32dp"
         android:inputType="text"
-        android:hint="@string/address"
-        android:id="@+id/et_address"/>
+        android:hint="@string/location"
+        android:id="@+id/et_location"/>
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/et_address"
+        app:layout_constraintTop_toTopOf="@id/et_location"
         android:src="@drawable/address"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="32dp"
         android:contentDescription="@string/username_image"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        app:layout_constraintTop_toBottomOf="@id/et_address"
-        android:layout_marginStart="32dp"
-        android:inputType="text"
-        android:hint="@string/city"
-        android:id="@+id/et_City"/>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/et_City"
-        android:src="@drawable/company"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="32dp"
-        android:contentDescription="@string/phone_image"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        app:layout_constraintTop_toBottomOf="@id/et_City"
-        android:layout_marginStart="32dp"
-        android:inputType="date"
-        android:hint="@string/post_code"
-        android:id="@+id/et_postCode" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/et_postCode"
-        android:src="@drawable/postcode"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="32dp"
-        android:contentDescription="@string/date_image"/>
 
 
 

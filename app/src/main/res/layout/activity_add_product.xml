@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.usahaq_skripsi.ui.add.AddBusinessActivity">
+    tools:context=".ui.add.AddProductActivity">
 
     <ImageButton
         android:id="@+id/btn_back"
@@ -19,19 +20,21 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/tv_pageTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="58dp"
-        android:text="@string/create_business"
+
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/btn_back"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/create_product" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_business"
+        android:id="@+id/profile_product"
         android:layout_width="84dp"
         android:layout_height="84dp"
         android:layout_marginTop="24dp"
@@ -48,24 +51,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
-        android:clickable="true"
-        android:focusable="true"
         android:fontFamily="@font/rubik_light"
-        android:text="@string/add_photo"
+        android:text="@string/product_photo"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profile_business" />
+        app:layout_constraintTop_toBottomOf="@id/profile_product" />
 
     <EditText
-        android:id="@+id/et_business"
+        android:id="@+id/et_product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="28dp"
         android:layout_marginEnd="54dp"
-        android:hint="@string/business_name"
+        android:layout_marginTop="28dp"
+        android:hint="@string/product"
         android:inputType="text"
         app:layout_constraintTop_toBottomOf="@id/tv_addPhoto" />
 
@@ -74,31 +75,73 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:contentDescription="@string/username_image"
-        android:src="@drawable/company"
+        android:src="@drawable/product"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/et_business" />
+        app:layout_constraintTop_toTopOf="@id/et_product" />
 
     <EditText
-        android:id="@+id/et_address"
+        android:id="@+id/et_sell"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="54dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="28dp"
-        android:hint="@string/address"
-        app:layout_constraintTop_toBottomOf="@id/et_business" />
+        android:hint="@string/sell_price"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/et_product" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:contentDescription="@string/date_image"
-        android:src="@drawable/address"
+        android:src="@drawable/sell"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/et_address" />
+        app:layout_constraintTop_toTopOf="@id/et_sell" />
+
+    <EditText
+        android:id="@+id/et_stocks"
+        android:layout_width="match_parent"
+        android:layout_marginEnd="54dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
+        android:hint="@string/stocks"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/et_sell" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/date_image"
+        android:src="@drawable/stock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/et_stocks" />
+
+    <EditText
+        android:id="@+id/et_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginTop="28dp"
+        android:hint="@string/description"
+        android:maxLines="3"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/et_stocks" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/date_image"
+        android:src="@drawable/infocard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/et_desc" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/btn_addBusiness"
+        android:id="@+id/btn_addProduct"
         android:layout_width="match_parent"
         android:layout_height="74dp"
         android:layout_marginHorizontal="32dp"
@@ -115,7 +158,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/btn_addbusiness"
+                android:text="@string/add_product"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="18dp"
@@ -127,4 +170,6 @@
 
     </androidx.cardview.widget.CardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+  </androidx.constraintlayout.widget.ConstraintLayout>

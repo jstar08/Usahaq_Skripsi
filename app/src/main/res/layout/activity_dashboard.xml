@@ -84,7 +84,7 @@
                 android:textSize="12sp"/>
 
             <TextView
-                android:id="@+id/tv_postalCode"
+                android:id="@+id/tv_phone_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="@id/tv_accountName"
@@ -206,7 +206,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="16dp"
-        android:src="@drawable/fab_add"/>
+        android:backgroundTint="@color/blue_addButton"
+        android:src="@drawable/ic_baseline_add_24"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

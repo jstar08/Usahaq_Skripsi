@@ -108,7 +108,6 @@ class Register : AppCompatActivity(), RegisterActivityListener  {
                         }
                         1 -> {
                             account.name = fragment1Binding.etName.text.toString()
-                            account.username = fragment1Binding.etUsername.text.toString()
                             account.password = fragment1Binding.etPassword.text.toString()
                             account.customEmail = fragment1Binding.etEmail.text.toString()
                             tvNumber.text = "2"
@@ -128,11 +127,9 @@ class Register : AppCompatActivity(), RegisterActivityListener  {
                             )
                         }
                         2 -> {
-                            account.identityNumber =
-                                fragment2Binding.etIdNumber.text.toString()
-                            account.address = fragment2Binding.etAddress.text.toString()
-                            account.city = fragment2Binding.etCity.text.toString()
-                            account.postalCode = fragment2Binding.etPostCode.text.toString()
+                            account.phoneNumber =
+                                fragment2Binding.etPhoneNumber.text.toString()
+                            account.location = fragment2Binding.etLocation.text.toString()
                             account.imageUrl = imageUrl
                             tvNumber.text = "3"
                             tvNextAccept.text = "Finish"
