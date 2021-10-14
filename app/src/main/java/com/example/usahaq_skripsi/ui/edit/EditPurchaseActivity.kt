@@ -1,4 +1,4 @@
-package com.example.usahaq_skripsi.ui.add
+package com.example.usahaq_skripsi.ui.edit
 
 import android.app.Activity
 import android.app.DatePickerDialog
@@ -8,14 +8,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
-import com.example.usahaq_skripsi.databinding.ActivityAddPurchaseBinding
-import com.example.usahaq_skripsi.model.Business
+import com.example.usahaq_skripsi.databinding.ActivityEditPurchaseBinding
 import com.example.usahaq_skripsi.model.Product
 import com.example.usahaq_skripsi.model.Purchase
+import com.example.usahaq_skripsi.ui.add.AddPurchaseActivity
 import com.example.usahaq_skripsi.util.ViewModelFactory
 import com.example.usahaq_skripsi.viewmodel.ProductViewModel
 import com.example.usahaq_skripsi.viewmodel.PurchaseViewModel
@@ -23,17 +22,16 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import java.util.*
 
-class AddPurchaseActivity : AppCompatActivity() {
+class EditPurchaseActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityAddPurchaseBinding
-    private var businessData : Business?= null
+    private lateinit var binding : ActivityEditPurchaseBinding
     private lateinit var storage: FirebaseStorage
     private lateinit var storageReference: StorageReference
     private var imageUri : Uri?= null
     private var imageUrl : Uri?= null
     private lateinit var imageId: String
-    private lateinit var viewmodel : PurchaseViewModel
     private lateinit var productViewModel: ProductViewModel
+    private lateinit var viewmodel: PurchaseViewModel
 
     private var purchase : Purchase = Purchase()
     private var product : Product = Product()
@@ -42,22 +40,26 @@ class AddPurchaseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAddPurchaseBinding.inflate(layoutInflater)
+        binding = ActivityEditPurchaseBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         imageId = UUID.randomUUID().toString()
+
+        val purchaseData = intent.getParcelableExtra<Purchase>(PURCHASE)
 
         val factory = ViewModelFactory.getInstance(this)
         viewmodel = ViewModelProvider(this, factory)[PurchaseViewModel::class.java]
         productViewModel = ViewModelProvider(this, factory)[ProductViewModel::class.java]
 
-        businessData = intent.getParcelableExtra(BUSINESS)
 
         binding.apply {
-            etSales.visibility = View.GONE
-            ivSell.visibility = View.GONE
-            etDesc.visibility = View.GONE
-            ivDesc.visibility = View.GONE
+            etProduct.setText(purchaseData?.name)
+            etDate.setText(purchaseData?.date)
+            etStocks.setText(purchaseData?.stocks)
+            etPrice.setText(purchaseData?.price)
+            Glide.with(this@EditPurchaseActivity)
+                .load(purchaseData?.imageUrl)
+                .into(profilePurchase)
             etDate.setOnClickListener {
                 pickDate()
             }
@@ -70,57 +72,37 @@ class AddPurchaseActivity : AppCompatActivity() {
             }
 
             btnAddPurchase.setOnClickListener {
-                addPurchase()
+                editPurchase(purchaseData!!)
             }
 
             btnBack.setOnClickListener {
                 onBackPressed()
             }
-            switchButton.setOnClickListener {
-                showProductPrice()
-            }
         }
+
     }
 
-    private fun addPurchase(){
+    private fun editPurchase(purchaseData : Purchase) {
         purchase.name = binding.etProduct.text.toString()
-        purchase.stocks = binding.etStocks.text.toString()
         purchase.price = binding.etPrice.text.toString()
-        purchase.imageUrl = imageUrl.toString()
+        purchase.stocks = binding.etStocks.text.toString()
         purchase.date = binding.etDate.text.toString()
-        purchase.purchaseId = UUID.randomUUID().toString()
-        purchase.businessId = businessData?.businessId
-        viewmodel.createPurchase(purchase)
-
-        if (binding.switchButton.isChecked){
-            addProduct()
+        if (imageUrl!= null) {
+            purchase.imageUrl = imageUrl.toString()
         }
+        else{
+            purchase.imageUrl = purchaseData.imageUrl
+        }
+        editProduct(purchaseData)
+        purchase.purchaseId = purchaseData.purchaseId
+        viewmodel.editPurchase(purchase)
         if(isSuccess){
             finish()
         }
     }
 
-    private fun showProductPrice(){
-        binding.apply {
-            if (switchButton.isChecked){
-                etSales.visibility = View.VISIBLE
-                ivSell.visibility = View.VISIBLE
-                etDesc.visibility = View.VISIBLE
-                ivDesc.visibility = View.VISIBLE
-            }
-            else{
-                etSales.visibility = View.GONE
-                ivSell.visibility = View.GONE
-                etDesc.visibility = View.GONE
-                ivDesc.visibility = View.GONE
-            }
-        }
-
-
-    }
-
-    private fun addProduct(){
-        productViewModel.showListProduct(businessData?.businessId!!).observe(this,{result ->
+    private fun editProduct(purchaseData: Purchase){
+        productViewModel.showListProduct(purchaseData?.businessId!!).observe(this,{result ->
             for(i in result){
                 if(binding.etProduct.text.toString().equals(i.name, ignoreCase = true)){
                     productExisted = true
@@ -128,27 +110,17 @@ class AddPurchaseActivity : AppCompatActivity() {
                 }
             }
             if(productExisted){
-                val totalStock = product.stocks?.toInt()?.plus(binding.etStocks.text.toString().toInt())
-                product.price = binding.etSales.text.toString()
+                val stockChanges = binding.etStocks.text.toString().toInt().minus(purchaseData.stocks?.toInt()!!)
+                val totalStock = product.stocks?.toInt()?.plus(stockChanges)
+                product.price = product.price
                 product.stocks = totalStock.toString()
-                binding.etDesc.setText(product.description)
-                product.description = binding.etDesc.text.toString()
-                product.imageUrl = imageUrl.toString()
+                if (imageUrl!= null) {
+                    product.imageUrl = imageUrl.toString()
+                }
                 productViewModel.editProduct(product)
             }
-            else {
-                product.name = binding.etProduct.text.toString()
-                product.stocks = binding.etStocks.text.toString()
-                product.price = binding.etSales.text.toString()
-                product.imageUrl = imageUrl.toString()
-                product.description = binding.etDesc.text.toString()
-                product.productId = UUID.randomUUID().toString()
-                product.businessId = businessData?.businessId
-                productViewModel.createProduct(product)
-            }
-        })
-
-
+        }
+        )
     }
 
     private fun pickDate(){
@@ -193,6 +165,6 @@ class AddPurchaseActivity : AppCompatActivity() {
 
     companion object{
         var isSuccess = true
-        const val BUSINESS = "business"
+        const val PURCHASE = "purchase"
     }
 }

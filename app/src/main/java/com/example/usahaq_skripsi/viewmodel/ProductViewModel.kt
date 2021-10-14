@@ -12,8 +12,8 @@ class ProductViewModel(private val mRepository: Repository) : ViewModel() {
 
     fun createProduct(product: Product) = mRepository.createProduct(product)
 
-    fun showListProduct(businessId:String, adapter: ProductAdapter) : LiveData<List<Product>>
-    = mRepository.showListProduct(businessId,adapter)
+    fun showListProduct(businessId:String) : LiveData<List<Product>>
+    = mRepository.showListProduct(businessId)
 
     fun editProduct(product: Product) = mRepository.editProduct(product)
 

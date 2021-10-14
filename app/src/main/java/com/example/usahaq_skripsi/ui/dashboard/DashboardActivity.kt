@@ -3,6 +3,7 @@ package com.example.usahaq_skripsi.ui.dashboard
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
@@ -12,6 +13,7 @@ import com.example.usahaq_skripsi.ui.add.AddBusinessActivity
 import com.example.usahaq_skripsi.util.ViewModelFactory
 import com.example.usahaq_skripsi.viewmodel.AuthViewModel
 import com.example.usahaq_skripsi.viewmodel.BusinessViewModel
+import com.facebook.shimmer.ShimmerFrameLayout
 
 class DashboardActivity : AppCompatActivity() {
 
@@ -19,6 +21,8 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var adapter : BusinessAdapter
     private lateinit var businessViewModel : BusinessViewModel
     private lateinit var accountViewModel : AuthViewModel
+    private lateinit var shimmerFrameLayout : ShimmerFrameLayout
+    private lateinit var shimmerProfile : ShimmerFrameLayout
 
     override fun onResume() {
         super.onResume()
@@ -35,6 +39,8 @@ class DashboardActivity : AppCompatActivity() {
         val factory = ViewModelFactory.getInstance(this)
         businessViewModel = ViewModelProvider(this, factory)[BusinessViewModel::class.java]
         accountViewModel = ViewModelProvider(this,factory)[AuthViewModel::class.java]
+
+        loadShimmer()
 
         showAccountData()
 
@@ -55,10 +61,21 @@ class DashboardActivity : AppCompatActivity() {
         }
     }
 
+    private fun loadShimmer(){
+        shimmerFrameLayout = binding.shimmerLayout
+        shimmerProfile = binding.shimmerProfile
+        shimmerFrameLayout.visibility = View.VISIBLE
+        binding.rvBusiness.visibility = View.GONE
+        shimmerProfile.visibility = View.VISIBLE
+        binding.clProfileData.visibility = View.GONE
+    }
+
     private fun showBusiness(adapter: BusinessAdapter){
        businessViewModel.showlistBusiness(adapter).observe(this, { result ->
            adapter.businessData.clear()
            adapter.businessData.addAll(result)
+           shimmerFrameLayout.visibility = View.GONE
+           binding.rvBusiness.visibility = View.VISIBLE
            binding.rvBusiness.adapter = adapter
        })
 
@@ -72,6 +89,8 @@ class DashboardActivity : AppCompatActivity() {
                 tvAccountLocation.text = it.location
                 tvPhoneNumber.text = it.phoneNumber
                 Glide.with(this@DashboardActivity).load(it.imageUrl).into(binding.ivAccountImage)
+                shimmerProfile.visibility = View.GONE
+                binding.clProfileData.visibility = View.VISIBLE
             }
         })
     }

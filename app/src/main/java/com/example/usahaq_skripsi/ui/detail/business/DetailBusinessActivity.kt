@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.usahaq_skripsi.databinding.ActivityDetailBusinessBinding
 import com.example.usahaq_skripsi.model.Business
 import com.example.usahaq_skripsi.ui.add.AddProductActivity
+import com.example.usahaq_skripsi.ui.add.AddPurchaseActivity
+import com.example.usahaq_skripsi.ui.add.AddSalesTransactionActivity
 import com.example.usahaq_skripsi.ui.edit.EditBusinessActivity
 import com.example.usahaq_skripsi.ui.edit.EditProductActivity
 import com.example.usahaq_skripsi.util.ViewModelFactory
@@ -52,7 +54,15 @@ class DetailBusinessActivity : AppCompatActivity() {
             }
 
             btnAddTransaction.setOnClickListener {
+                val intent = Intent(this@DetailBusinessActivity, AddSalesTransactionActivity::class.java)
+                intent.putExtra(AddSalesTransactionActivity.BUSINESS_DATA, businessData)
+                startActivity(intent)
+            }
 
+            btnAddPurchase.setOnClickListener {
+                val intent = Intent(this@DetailBusinessActivity, AddPurchaseActivity::class.java)
+                intent.putExtra(AddPurchaseActivity.BUSINESS, businessData)
+                startActivity(intent)
             }
 
             btnBack.setOnClickListener {

@@ -17,6 +17,15 @@
         android:theme="@style/Theme.Usahaq_Skripsi"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.add.AddSalesTransactionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.edit.EditPurchaseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.detail.purchase.DetailPurchaseActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.add.AddPurchaseActivity"
             android:exported="true" />
         <activity

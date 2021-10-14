@@ -3,15 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/drawable/cornercircle.xml" value="0.2222222222222222" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/drawable/ic_location.xml" value="0.2324074074074074" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_add_business.xml" value="0.2" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_add_product.xml" value="0.1956521739130435" />
+        <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_add_purchase.xml" value="0.22418478260869565" />
+        <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_add_sales_transaction.xml" value="0.264" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_app_intro.xml" value="0.12708333333333333" />
-        <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_dashboard.xml" value="0.264" />
+        <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_dashboard.xml" value="0.2" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_detail_business.xml" value="0.1956521739130435" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_detail_product.xml" value="0.19021739130434784" />
+        <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_detail_purchase.xml" value="0.21467391304347827" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_edit_business.xml" value="0.176" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_edit_product.xml" value="0.18125" />
+        <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_edit_purchase.xml" value="0.18125" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_explore.xml" value="0.2" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_price_recommendation.xml" value="0.264" />
@@ -37,13 +42,16 @@
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/item_product_recommend.xml" value="0.21240942028985507" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/item_region.xml" value="0.12552083333333333" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/item_relatedqueries.xml" value="0.12552083333333333" />
+        <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/item_transactionproduct.xml" value="0.2" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/item_trends_today.xml" value="0.21240942028985507" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/item_year_in_search.xml" value="0.21240942028985507" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/sheet.xml" value="0.20244565217391305" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/sheet_delete_product.xml" value="0.19021739130434784" />
+        <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/sheet_product_sales.xml" value="0.20969202898550723" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/shimmer_explore.xml" value="0.21240942028985507" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/shimmer_itembusiness.xml" value="0.21240942028985507" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/shimmer_itemdetailyeartrends.xml" value="0.21240942028985507" />
+        <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/shimmer_profile.xml" value="0.21965579710144928" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/shimmer_todaytrends.xml" value="0.21240942028985507" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/shimmering_pricelayout.xml" value="0.21240942028985507" />
       </map>

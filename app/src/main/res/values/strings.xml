@@ -205,6 +205,9 @@
     <string name="description">Description:</string>
     <string name="edit_business">Edit Business</string>
     <string name="create_product">Create Product</string>
+    <string name="create_purchase">Create Purchase</string>
+    <string name="total_price">Total Buy Price</string>
+    <string name="edit_purchase">Edit Purchase</string>
 
 
 </resources>

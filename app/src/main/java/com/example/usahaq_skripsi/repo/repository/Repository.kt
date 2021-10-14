@@ -9,12 +9,18 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.usahaq_skripsi.adapter.BusinessAdapter
 import com.example.usahaq_skripsi.adapter.ProductAdapter
+import com.example.usahaq_skripsi.adapter.PurchaseAdapter
 import com.example.usahaq_skripsi.model.Account
 import com.example.usahaq_skripsi.model.Business
 import com.example.usahaq_skripsi.model.Product
+import com.example.usahaq_skripsi.model.Purchase
 import com.example.usahaq_skripsi.ui.add.AddBusinessActivity
 import com.example.usahaq_skripsi.ui.add.AddProductActivity
+import com.example.usahaq_skripsi.ui.add.AddPurchaseActivity
 import com.example.usahaq_skripsi.ui.dashboard.DashboardActivity
+import com.example.usahaq_skripsi.ui.edit.EditBusinessActivity
+import com.example.usahaq_skripsi.ui.edit.EditProductActivity
+import com.example.usahaq_skripsi.ui.edit.EditPurchaseActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.ArrayList
@@ -121,9 +127,11 @@ class Repository(val auth : FirebaseAuth, val firestore: FirebaseFirestore, val 
             "name", business.name!!)
             .addOnSuccessListener {
                 Log.d("EDIT", "Business ${business.businessId} succesfully editted!")
+                EditBusinessActivity.isSuccess = true
             }
             .addOnFailureListener { e->
                 Log.e("EDIT", "EDIT Busines Failed because $e")
+                EditBusinessActivity.isSuccess = false
             }
     }
 
@@ -161,7 +169,7 @@ class Repository(val auth : FirebaseAuth, val firestore: FirebaseFirestore, val 
             }
     }
 
-    override fun showListProduct(businessId : String, adapter: ProductAdapter): LiveData<List<Product>> {
+    override fun showListProduct(businessId : String): LiveData<List<Product>> {
         val productData = MutableLiveData<List<Product>>()
         val productList = ArrayList<Product>()
         firestore.collection("product").whereEqualTo("businessId", businessId)
@@ -195,9 +203,11 @@ class Repository(val auth : FirebaseAuth, val firestore: FirebaseFirestore, val 
                 "name", product.name, "stocks", product.stocks, "price", product.price)
             .addOnSuccessListener {
                 Log.d("EDIT", "Product ${product.productId} succesfully editted!")
+                EditProductActivity.isSuccess = true
             }
             .addOnFailureListener { e->
                 Log.e("EDIT", "EDIT Product Failed because $e")
+                EditProductActivity.isSuccess = true
             }
     }
 
@@ -225,6 +235,88 @@ class Repository(val auth : FirebaseAuth, val firestore: FirebaseFirestore, val 
 
     override fun deleteProduct(productId: String) {
         firestore.collection("product").document(productId).delete()
+    }
+
+    override fun createPurchase(purchase: Purchase) {
+        firestore.collection("purchase").document(purchase.purchaseId.toString())
+            .set(purchase)
+            .addOnSuccessListener {
+                Log.d("CREATE", "Purhcase ${purchase.purchaseId} succesfully made!")
+                AddPurchaseActivity.isSuccess = true
+            }
+            .addOnFailureListener { e ->
+                Log.e("CREATE", "Purchase Failed because $e")
+                AddPurchaseActivity.isSuccess = false
+            }
+    }
+
+    override fun showListPurchase(businessId: String): LiveData<List<Purchase>> {
+        val purchaseData = MutableLiveData<List<Purchase>>()
+        val purchaseList = ArrayList<Purchase>()
+        firestore.collection("purchase").whereEqualTo("businessId", businessId)
+            .get()
+            .addOnSuccessListener { documents ->
+                Log.d("Show Purchase", "Purchase succesfully shown")
+                for(document in documents) {
+                    purchaseList.add(
+                        Purchase(
+                            name = document.getString("name").toString(),
+                            purchaseId = document.getString("purchaseId").toString(),
+                            businessId = document.getString("businessId").toString(),
+                            price = document.getString("price").toString(),
+                            stocks = document.getString("stocks").toString(),
+                            imageUrl = document.getString("imageUrl").toString(),
+                            date = document.getString("date").toString()
+                        )
+                    )
+                }
+                purchaseData.postValue(purchaseList)
+            }
+            .addOnFailureListener { e ->
+                Log.e("Show Purchase", "$e")
+            }
+        return purchaseData
+    }
+
+    override fun editPurchase(purchase: Purchase) {
+        firestore.collection("purchase").document(purchase.purchaseId!!)
+            .update("name", purchase.name, "price", purchase.price,
+            "stocks", purchase.stocks, "date", purchase.date, "imageUrl", purchase.imageUrl)
+            .addOnSuccessListener {
+                Log.d("EDIT", "Purchase ${purchase.purchaseId} succesfully editted!")
+                EditPurchaseActivity.isSuccess = true
+            }
+            .addOnFailureListener { e->
+                Log.e("EDIT", "EDIT Purchase Failed because $e")
+                EditPurchaseActivity.isSuccess = false
+            }
+    }
+
+    override fun detailPurchase(purchaseId: String): LiveData<Purchase> {
+        val purchaseData = MutableLiveData<Purchase>()
+        firestore.collection("purchase").document(purchaseId).get()
+            .addOnSuccessListener { document ->
+                Log.d("Show Purchase", "Purchase succesfully shown")
+                purchaseData.postValue(
+                    Purchase(
+                        name = document.getString("name").toString(),
+                        purchaseId = document.getString("purchaseId").toString(),
+                        businessId = document.getString("businessId").toString(),
+                        price = document.getString("price").toString(),
+                        stocks = document.getString("stocks").toString(),
+                        imageUrl = document.getString("imageUrl").toString(),
+                        date = document.getString("date").toString()
+                    )
+                )
+            }
+            .addOnFailureListener { e ->
+                Log.e("Show Purchase", "$e")
+            }
+        return purchaseData
+    }
+
+    override fun deletePurchase(purchaseId: String) {
+        firestore.collection("purchase").document(purchaseId).delete()
     }
 
 

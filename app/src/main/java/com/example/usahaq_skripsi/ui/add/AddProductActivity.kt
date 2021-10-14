@@ -25,8 +25,6 @@ class AddProductActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityAddProductBinding
     private var businessData : Business?= null
-    private lateinit var auth : FirebaseAuth
-    private lateinit var database : FirebaseStorage
     private lateinit var storage: FirebaseStorage
     private lateinit var storageReference: StorageReference
     private var imageUri : Uri?= null
@@ -40,9 +38,6 @@ class AddProductActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAddProductBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        auth = FirebaseAuth.getInstance()
-        database = FirebaseStorage.getInstance()
 
         imageId = UUID.randomUUID().toString()
 
@@ -75,6 +70,7 @@ class AddProductActivity : AppCompatActivity() {
         product.name = binding.etProduct.text.toString()
         product.stocks = binding.etStocks.text.toString()
         product.price = binding.etSell.text.toString()
+        product.description = binding.etDesc.text.toString()
         product.imageUrl = imageUrl.toString()
         product.productId = UUID.randomUUID().toString()
         product.businessId = businessData?.businessId
