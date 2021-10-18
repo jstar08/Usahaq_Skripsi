@@ -12,11 +12,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.usahaq_skripsi.databinding.ActivityEditBusinessBinding
 import com.example.usahaq_skripsi.model.Business
-import com.example.usahaq_skripsi.ui.add.AddBusinessActivity
-import com.example.usahaq_skripsi.ui.dashboard.DashboardActivity
 import com.example.usahaq_skripsi.util.ViewModelFactory
 import com.example.usahaq_skripsi.viewmodel.BusinessViewModel
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import java.util.*

@@ -6,11 +6,10 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.example.usahaq_skripsi.databinding.ActivityDetailBusinessBinding
 import com.example.usahaq_skripsi.model.Business
-import com.example.usahaq_skripsi.ui.add.AddProductActivity
-import com.example.usahaq_skripsi.ui.add.AddPurchaseActivity
-import com.example.usahaq_skripsi.ui.add.AddSalesTransactionActivity
+import com.example.usahaq_skripsi.ui.add.product.AddProductActivity
+import com.example.usahaq_skripsi.ui.add.purchase.AddPurchaseActivity
+import com.example.usahaq_skripsi.ui.add.sales.AddSalesTransactionActivity
 import com.example.usahaq_skripsi.ui.edit.EditBusinessActivity
-import com.example.usahaq_skripsi.ui.edit.EditProductActivity
 import com.example.usahaq_skripsi.util.ViewModelFactory
 import com.example.usahaq_skripsi.viewmodel.BusinessViewModel
 import com.google.android.material.tabs.TabLayoutMediator

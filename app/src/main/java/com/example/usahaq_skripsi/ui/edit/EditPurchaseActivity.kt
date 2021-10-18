@@ -14,7 +14,6 @@ import com.bumptech.glide.Glide
 import com.example.usahaq_skripsi.databinding.ActivityEditPurchaseBinding
 import com.example.usahaq_skripsi.model.Product
 import com.example.usahaq_skripsi.model.Purchase
-import com.example.usahaq_skripsi.ui.add.AddPurchaseActivity
 import com.example.usahaq_skripsi.util.ViewModelFactory
 import com.example.usahaq_skripsi.viewmodel.ProductViewModel
 import com.example.usahaq_skripsi.viewmodel.PurchaseViewModel

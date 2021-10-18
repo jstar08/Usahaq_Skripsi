@@ -62,7 +62,7 @@
     <string name="user_image">Image User</string>
     <string name="number_chat">number_chat</string>
     <string name="outlets">outlets</string>
-    <string name="create_business">Create Business</string>
+    <string name="create_business">Start Creating Your Business</string>
     <string name="edit">Edit</string>
     <string name="placeholder_name">Richard Beck</string>
     <string name="placeholder_job">Vice President of Google</string>
@@ -208,6 +208,11 @@
     <string name="create_purchase">Create Purchase</string>
     <string name="total_price">Total Buy Price</string>
     <string name="edit_purchase">Edit Purchase</string>
+    <string name="settings">settings</string>
+    <string name="financial_report">Financial Report</string>
+    <string name="click_for_more">Click for more</string>
+    <string name="remove">Remove</string>
+    <string name="all_items">All items</string>
 
 
 </resources>

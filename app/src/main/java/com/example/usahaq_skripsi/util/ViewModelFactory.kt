@@ -5,10 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.usahaq_skripsi.di.Injection
 import com.example.usahaq_skripsi.repo.repository.Repository
-import com.example.usahaq_skripsi.viewmodel.AuthViewModel
-import com.example.usahaq_skripsi.viewmodel.BusinessViewModel
-import com.example.usahaq_skripsi.viewmodel.ProductViewModel
-import com.example.usahaq_skripsi.viewmodel.PurchaseViewModel
+import com.example.usahaq_skripsi.viewmodel.*
 
 class ViewModelFactory private constructor(private val mContentRepository: Repository) :
     ViewModelProvider.NewInstanceFactory() {
@@ -27,6 +24,9 @@ class ViewModelFactory private constructor(private val mContentRepository: Repos
             }
             modelClass.isAssignableFrom(PurchaseViewModel::class.java)-> {
                 PurchaseViewModel(mContentRepository) as T
+            }
+            modelClass.isAssignableFrom(SalesViewModel::class.java)-> {
+                SalesViewModel(mContentRepository) as T
             }
             else -> throw Throwable("Unknown ViewModel Class : " + modelClass.name)
         }

@@ -1,5 +1,6 @@
-package com.example.usahaq_skripsi.ui.add
+package com.example.usahaq_skripsi.ui.add.sales
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -7,13 +8,10 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.usahaq_skripsi.R
-import com.example.usahaq_skripsi.adapter.ProductAdapter
 import com.example.usahaq_skripsi.adapter.SalesProductAdapter
 import com.example.usahaq_skripsi.databinding.ActivityAddSalesTransactionBinding
-import com.example.usahaq_skripsi.databinding.SheetDeleteProductBinding
 import com.example.usahaq_skripsi.databinding.SheetProductSalesBinding
 import com.example.usahaq_skripsi.model.Business
-import com.example.usahaq_skripsi.model.Product
 import com.example.usahaq_skripsi.model.ProductSales
 import com.example.usahaq_skripsi.util.ViewModelFactory
 import com.example.usahaq_skripsi.util.productInToProductSales
@@ -34,9 +32,19 @@ class AddSalesTransactionActivity : AppCompatActivity(), SalesProductAdapter.OnC
     private var productSales = ArrayList<ProductSales>()
     private var totalAmount = 0
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode==0){
+            finish()
+        }
+    }
+
     override fun onResume() {
         super.onResume()
         showProduct(adapter)
+        totalAmount = 0
+        productSales.clear()
+        binding.btnConfirmation.visibility = View.GONE
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,6 +70,12 @@ class AddSalesTransactionActivity : AppCompatActivity(), SalesProductAdapter.OnC
             }
 
             btnConfirmation.visibility = View.GONE
+            btnConfirmation.setOnClickListener {
+                val intent = Intent(this@AddSalesTransactionActivity, CheckoutActivity::class.java)
+                intent.putParcelableArrayListExtra(CheckoutActivity.PRODUCT_SALES, productSales)
+                intent.putExtra(CheckoutActivity.BUSINESS, business)
+                startActivity(intent)
+            }
         }
     }
 
@@ -87,6 +101,7 @@ class AddSalesTransactionActivity : AppCompatActivity(), SalesProductAdapter.OnC
         sheetDialog.show()
 
         var number = 0
+        var productListed = false
 
         if(productData.amount=="0"||productData.amount==null){
             number = 1
@@ -133,8 +148,8 @@ class AddSalesTransactionActivity : AppCompatActivity(), SalesProductAdapter.OnC
                     sheet.tvButtonQuantity.text = "$number items"
                 }
                 if (number == 0) {
-                    sheet.tvAdditems.text = "Remove"
-                    sheet.tvButtonQuantity.text = "All items"
+                    sheet.tvAdditems.text = getString(R.string.remove)
+                    sheet.tvButtonQuantity.text = getString(R.string.all_items)
                     sheet.ivBtnColor.setColorFilter(
                         ContextCompat.getColor(
                             this@AddSalesTransactionActivity,
@@ -143,14 +158,28 @@ class AddSalesTransactionActivity : AppCompatActivity(), SalesProductAdapter.OnC
                     )
                 }
             }
-        }
 
-        sheet.btnConfirmation.setOnClickListener {
-            sheetDialog.dismiss()
-            adapter.productData[index].amount = number.toString()
-            binding.rvProduct.adapter = adapter
-            showConfirmation()
-            productSales.add(productData)
+            btnConfirmation.setOnClickListener {
+                sheetDialog.dismiss()
+                adapter.productData[index].amount = number.toString()
+                adapter.productData[index].note = sheet.etNotes.text.toString()
+                if(productSales.isNotEmpty()){
+                    for(i in productSales){
+                        if (i.name.equals(productData.name)){
+                            i.amount = number.toString()
+                            productListed = true
+                        }
+                    }
+                    if (!productListed){
+                        productSales.add(adapter.productData[index])
+                    }
+                }
+                else{
+                    productSales.add(adapter.productData[index])
+                }
+                binding.rvProduct.adapter = adapter
+                showConfirmation()
+            }
         }
     }
 

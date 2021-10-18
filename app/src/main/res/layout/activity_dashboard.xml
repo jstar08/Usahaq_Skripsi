@@ -21,15 +21,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/btn_logout"
+        android:id="@+id/btn_settings"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginTop="17dp"
         android:layout_marginEnd="12dp"
         android:backgroundTint="@color/white"
-        android:contentDescription="@string/logout"
+        android:contentDescription="@string/settings"
         android:scaleType="centerCrop"
-        android:src="@drawable/logout"
+        android:src="@drawable/setting"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -155,7 +155,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:clickable="true"
             android:text="@string/create_business"
             android:textColor="@color/orange"
             android:textSize="24sp"

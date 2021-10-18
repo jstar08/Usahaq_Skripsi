@@ -17,7 +17,19 @@
         android:theme="@style/Theme.Usahaq_Skripsi"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".ui.add.AddSalesTransactionActivity"
+            android:name=".ui.setting.SettingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.detail.sales.DetailSalesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.add.sales.CompleteTransactionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.add.sales.CheckoutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.add.sales.AddSalesTransactionActivity"
             android:exported="true" />
         <activity
             android:name=".ui.edit.EditPurchaseActivity"
@@ -26,7 +38,7 @@
             android:name=".ui.detail.purchase.DetailPurchaseActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.add.AddPurchaseActivity"
+            android:name=".ui.add.purchase.AddPurchaseActivity"
             android:exported="true" />
         <activity
             android:name=".ui.edit.EditBusinessActivity"
@@ -38,13 +50,13 @@
             android:name=".ui.detail.product.DetailProductActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.add.AddProductActivity"
+            android:name=".ui.add.product.AddProductActivity"
             android:exported="true" />
         <activity
             android:name=".ui.detail.business.DetailBusinessActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.add.AddBusinessActivity"
+            android:name=".ui.add.business.AddBusinessActivity"
             android:exported="true"
             android:label="@string/title_activity_add_business"
             android:theme="@style/Theme.Usahaq_Skripsi.NoActionBar" />

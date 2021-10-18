@@ -1,4 +1,10 @@
 package com.example.usahaq_skripsi.model
 
-class Sales {
-}
+data class Sales (
+    var salesId : String?= null,
+    var businessId : String?= null,
+    var date : String?= null,
+    var totalPrice : String ?=null,
+    var paymentMethod : String?=null,
+)
+

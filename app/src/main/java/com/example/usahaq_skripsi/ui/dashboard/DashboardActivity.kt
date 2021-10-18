@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.usahaq_skripsi.adapter.BusinessAdapter
 import com.example.usahaq_skripsi.databinding.ActivityDashboardBinding
-import com.example.usahaq_skripsi.ui.add.AddBusinessActivity
+import com.example.usahaq_skripsi.ui.add.business.AddBusinessActivity
 import com.example.usahaq_skripsi.util.ViewModelFactory
 import com.example.usahaq_skripsi.viewmodel.AuthViewModel
 import com.example.usahaq_skripsi.viewmodel.BusinessViewModel
@@ -45,8 +45,8 @@ class DashboardActivity : AppCompatActivity() {
         showAccountData()
 
         binding.apply {
-            btnLogout.setOnClickListener {
-                startActivity(Intent(this@DashboardActivity, AddBusinessActivity::class.java))
+            btnSettings.setOnClickListener {
+
             }
 
             fabAddBusiness.setOnClickListener {
@@ -72,11 +72,17 @@ class DashboardActivity : AppCompatActivity() {
 
     private fun showBusiness(adapter: BusinessAdapter){
        businessViewModel.showlistBusiness(adapter).observe(this, { result ->
-           adapter.businessData.clear()
-           adapter.businessData.addAll(result)
            shimmerFrameLayout.visibility = View.GONE
-           binding.rvBusiness.visibility = View.VISIBLE
-           binding.rvBusiness.adapter = adapter
+           if(result!=null){
+               adapter.businessData.clear()
+               adapter.businessData.addAll(result)
+               binding.clCreateBusiness.visibility = View.GONE
+               binding.rvBusiness.visibility = View.VISIBLE
+               binding.rvBusiness.adapter = adapter
+           }
+           else{
+            binding.clCreateBusiness.visibility = View.VISIBLE
+           }
        })
 
     }

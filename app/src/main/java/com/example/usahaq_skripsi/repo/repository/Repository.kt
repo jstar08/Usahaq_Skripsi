@@ -8,15 +8,10 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.usahaq_skripsi.adapter.BusinessAdapter
-import com.example.usahaq_skripsi.adapter.ProductAdapter
-import com.example.usahaq_skripsi.adapter.PurchaseAdapter
-import com.example.usahaq_skripsi.model.Account
-import com.example.usahaq_skripsi.model.Business
-import com.example.usahaq_skripsi.model.Product
-import com.example.usahaq_skripsi.model.Purchase
-import com.example.usahaq_skripsi.ui.add.AddBusinessActivity
-import com.example.usahaq_skripsi.ui.add.AddProductActivity
-import com.example.usahaq_skripsi.ui.add.AddPurchaseActivity
+import com.example.usahaq_skripsi.model.*
+import com.example.usahaq_skripsi.ui.add.business.AddBusinessActivity
+import com.example.usahaq_skripsi.ui.add.product.AddProductActivity
+import com.example.usahaq_skripsi.ui.add.purchase.AddPurchaseActivity
 import com.example.usahaq_skripsi.ui.dashboard.DashboardActivity
 import com.example.usahaq_skripsi.ui.edit.EditBusinessActivity
 import com.example.usahaq_skripsi.ui.edit.EditProductActivity
@@ -317,6 +312,107 @@ class Repository(val auth : FirebaseAuth, val firestore: FirebaseFirestore, val 
 
     override fun deletePurchase(purchaseId: String) {
         firestore.collection("purchase").document(purchaseId).delete()
+    }
+
+    override fun createSales(sales: Sales, productSold: ArrayList<ProductSold>) {
+        firestore.collection("sales").document(sales.salesId.toString())
+            .set(sales)
+            .addOnSuccessListener {
+                Log.d("CREATE", "Sales ${sales.salesId} succesfully made!")
+                for (i in productSold){
+                    firestore.collection("productSold").document(i.productSoldId.toString())
+                        .set(i)
+                }
+            }
+            .addOnFailureListener { e ->
+                Log.e("CREATE", "Purchase Failed because $e")
+            }
+
+    }
+
+    override fun deleteSales(salesId: String) {
+        firestore.collection("sales").document(salesId).delete()
+        firestore.collection("productSold").whereEqualTo("salesId", salesId).get()
+            .addOnSuccessListener { documents ->
+                for (i in documents){
+                    firestore.collection("productSold").document(
+                        i.getString("productSoldId").toString()
+                    ).delete()
+                }
+            }
+    }
+
+    override fun showListSales(businessId: String): LiveData<List<Sales>> {
+        val salesData = MutableLiveData<List<Sales>>()
+        val salesList = ArrayList<Sales>()
+        firestore.collection("sales").whereEqualTo("businessId", businessId)
+            .get()
+            .addOnSuccessListener { documents ->
+                Log.d("Show Sales", "Sales succesfully shown")
+                for(document in documents) {
+                    salesList.add(
+                        Sales(
+                            salesId = document.getString("salesId").toString(),
+                            businessId = document.getString("businessId").toString(),
+                            totalPrice = document.getString("totalPrice").toString(),
+                            date = document.getString("date").toString(),
+                            paymentMethod = document.getString("paymentMethod").toString()
+                        )
+                    )
+                }
+                salesData.postValue(salesList)
+            }
+            .addOnFailureListener { e ->
+                Log.e("Show Sales", "$e")
+            }
+        return salesData
+    }
+
+    override fun detailSales(salesId: String): LiveData<Sales> {
+        val salesData = MutableLiveData<Sales>()
+        firestore.collection("sales").document(salesId).get()
+            .addOnSuccessListener { document ->
+                Log.d("Show Sales", "Sales succesfully shown")
+                salesData.postValue(
+                    Sales(
+                        salesId = document.getString("salesId").toString(),
+                        businessId = document.getString("businessId").toString(),
+                        totalPrice = document.getString("totalPrice").toString(),
+                        date = document.getString("date").toString(),
+                        paymentMethod = document.getString("paymentMethod").toString()
+                    )
+                )
+            }
+            .addOnFailureListener { e ->
+                Log.e("Show Purchase", "$e")
+            }
+        return salesData
+    }
+
+    override fun detailProductSold(salesId: String): LiveData<List<ProductSold>> {
+        val productSoldData = MutableLiveData<List<ProductSold>>()
+        val productSoldList = ArrayList<ProductSold>()
+        firestore.collection("productSold").whereEqualTo("salesId", salesId)
+            .get()
+            .addOnSuccessListener { documents ->
+                Log.d("Show product sold", "product sold succesfully shown")
+                for(document in documents) {
+                    productSoldList.add(
+                        ProductSold(
+                            name = document.getString("name").toString(),
+                            amount = document.getString("amount").toString(),
+                            price = document.getString("price").toString(),
+                            note = document.getString("note").toString(),
+                            salesId = document.getString("sales_id").toString()
+                        )
+                    )
+                }
+                productSoldData.postValue(productSoldList)
+            }
+            .addOnFailureListener { e ->
+                Log.e("Show Sales", "$e")
+            }
+        return productSoldData
     }
 
 

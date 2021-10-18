@@ -6,5 +6,6 @@ data class ProductSold(
     var price : String ?= null,
     var amount : String ?= null,
     var note : String ?=null,
-    var sales_id : String ?=null
+    var salesId : String ?=null,
+    var productSoldId : String ?= null
 )

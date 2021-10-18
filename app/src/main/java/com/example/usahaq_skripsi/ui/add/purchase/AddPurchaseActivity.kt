@@ -1,4 +1,4 @@
-package com.example.usahaq_skripsi.ui.add
+package com.example.usahaq_skripsi.ui.add.purchase
 
 import android.app.Activity
 import android.app.DatePickerDialog

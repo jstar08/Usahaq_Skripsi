@@ -4,10 +4,7 @@ import androidx.lifecycle.LiveData
 import com.example.usahaq_skripsi.adapter.BusinessAdapter
 import com.example.usahaq_skripsi.adapter.ProductAdapter
 import com.example.usahaq_skripsi.adapter.PurchaseAdapter
-import com.example.usahaq_skripsi.model.Account
-import com.example.usahaq_skripsi.model.Business
-import com.example.usahaq_skripsi.model.Product
-import com.example.usahaq_skripsi.model.Purchase
+import com.example.usahaq_skripsi.model.*
 
 interface DataSource {
 
@@ -44,4 +41,14 @@ interface DataSource {
     fun detailPurchase(purchaseId : String) : LiveData<Purchase>
 
     fun deletePurchase(purchaseId: String)
+
+    fun createSales(sales : Sales, productSold : ArrayList<ProductSold>)
+
+    fun deleteSales(salesId: String)
+
+    fun showListSales(businessId: String) : LiveData<List<Sales>>
+
+    fun detailSales(salesId: String) : LiveData<Sales>
+
+    fun detailProductSold(salesId: String) : LiveData<List<ProductSold>>
 }
