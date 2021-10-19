@@ -38,7 +38,7 @@
             android:textColor="@color/black"
             android:layout_marginTop="16dp"
             android:textStyle="bold"
-            android:text="Are you sure you want to\n delete this product?"/>
+            android:text="@string/delete_confirmation"/>
 
         <ImageView
             android:id="@+id/btn_close"

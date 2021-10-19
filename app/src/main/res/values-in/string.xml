@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Usahaq</string>
     <string name="splash_screen">Splash Screen</string>
@@ -16,35 +17,35 @@
     <string name="lets_go_text">Go making</string>
     <string name="logo">logo</string>
     <string name="login">Login</string>
-    <string name="phone_number">Phone number</string>
+    <string name="phone_number">Nomor Telepon</string>
     <string name="phone_image">phone image</string>
-    <string name="fill_your_information">Fill your information</string>
-    <string name="full_name">Full name</string>
-    <string name="username">Username</string>
-    <string name="date_of_birth">Date of birth</string>
+    <string name="fill_your_information">Isikan Informasi Anda</string>
+    <string name="full_name">Nama Lengkap</string>
+    <string name="username">Nama Pengguna</string>
+    <string name="date_of_birth">Tanggal Lahir</string>
     <string name="date_image">date image</string>
     <string name="username_image">username_image</string>
-    <string name="have_an_account">Have an account?</string>
-    <string name="what_s_your_job">What\'s your job</string>
-    <string name="address">Address</string>
-    <string name="start_date">Start date</string>
-    <string name="company_name">Company name</string>
-    <string name="position">Position</string>
-    <string name="location">Location</string>
-    <string name="addresses">Addresses</string>
-    <string name="second_address">Second address</string>
+    <string name="have_an_account">Sudah punya akun?</string>
+    <string name="what_s_your_job">Apa pekerjaan anda ?</string>
+    <string name="address">Alamat</string>
+    <string name="start_date">Tanggal mulai</string>
+    <string name="company_name">Nama Perusahan</string>
+    <string name="position">Posisi</string>
+    <string name="location">Lokasi</string>
+    <string name="addresses">Alamat</string>
+    <string name="second_address">Alamat alternatif</string>
     <string name="company_image">company_image</string>
-    <string name="pick_way_to_verify">Pick way to verify</string>
+    <string name="pick_way_to_verify">Pilih cara untuk verifikasi</string>
     <string name="dashboard">Dashboard</string>
     <string name="firebase_access_token">firebase_access_token</string>
-    <string name="product">Product</string>
+    <string name="product">Produk</string>
     <string name="img_user_gray">img_user_gray</string>
-    <string name="user_profile_picture">User profile picture</string>
-    <string name="add_photo">Add photo</string>
-    <string name="id_number">ID Number</string>
-    <string name="city">City</string>
-    <string name="post_code">Post code</string>
-    <string name="terms_of_service">Terms of Service</string>
+    <string name="user_profile_picture">Foto profil pengguna</string>
+    <string name="add_photo">Tambahkan Gambar</string>
+    <string name="id_number">Nomor Identitas</string>
+    <string name="city">Kota</string>
+    <string name="post_code">Kode Pos</string>
+    <string name="terms_of_service">Ketentuan Penggunaan</string>
     <string name="tos_1">The following outlines the terms of use of the usahaq application. Before using any of usahaq services, you are required to read, understand and agree to these terms.</string>
     <string name="privacy">Privacy</string>
     <string name="tos_2">We have the right to update, modify, or otherwise alter these. all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this web site are protected by applicable capyright and trade mark law.</string>
@@ -62,45 +63,45 @@
     <string name="user_image">Image User</string>
     <string name="number_chat">number_chat</string>
     <string name="outlets">outlets</string>
-    <string name="create_business">Create Business</string>
-    <string name="edit">Edit</string>
+    <string name="create_business">Tambahkan Bisnis</string>
+    <string name="edit">Sunting</string>
     <string name="placeholder_name">Richard Beck</string>
     <string name="placeholder_job">Vice President of Google</string>
-    <string name="recommendation">Recommendation</string>
+    <string name="recommendation">Rekomendasi</string>
     <string name="product_recommendation">product_recommendation</string>
     <string name="product_to_sell">Product to sell</string>
-    <string name="price">Price</string>
+    <string name="price">Harga</string>
     <string name="best_price_to_sell">Best price to sell</string>
     <string name="best_location_for_you">Best location for you</string>
-    <string name="btn_addbusiness">Add Business</string>
-    <string name="business">Business</string>
-    <string name="business_name">Business name</string>
-    <string name="product_photo">Product photo</string>
-    <string name="stocks">Stocks</string>
+    <string name="btn_addbusiness">Tambahkan Bisnis</string>
+    <string name="business">Bisnis</string>
+    <string name="business_name">Nama bisnis</string>
+    <string name="product_photo">Foto Produk</string>
+    <string name="stocks">Stok</string>
     <string name="capital_cost">Capital cost</string>
-    <string name="sell_price">Sell price</string>
+    <string name="sell_price">Harga Jual</string>
     <string name="clipboard_image">clipboard image</string>
     <string name="clipboard_cardview">clipboard_cardview</string>
-    <string name="income">Income</string>
-    <string name="outcome">Outcome</string>
-    <string name="catalog">Catalog</string>
-    <string name="add_product">Add product</string>
-    <string name="sales_summary">Sales Summary</string>
-    <string name="gross_sales">COGS</string>
-    <string name="click_for_details">Click for details</string>
-    <string name="net_sales">Net Sales</string>
-    <string name="gross_profit">Gross Profit</string>
-    <string name="average_sales_per_transaction">Average Sales per Transaction</string>
-    <string name="transaction">Transaction</string>
+    <string name="income">Pemasukan</string>
+    <string name="outcome">Pengeluaran</string>
+    <string name="catalog">Katalog</string>
+    <string name="add_product">Tambahkan Produk</string>
+    <string name="sales_summary">Rangkuman Penjualan</string>
+    <string name="gross_sales">Harga Pokok Penjualan (HPP)</string>
+    <string name="click_for_details">Klik untuk detail</string>
+    <string name="net_sales">Penjualan Bersih</string>
+    <string name="gross_profit">Keuntungan kotor</string>
+    <string name="average_sales_per_transaction">Rata - rata pemasukan per transaksi</string>
+    <string name="transaction">Penjualan</string>
     <string name="query_hint">Find products you need..</string>
-    <string name="categories">Categories</string>
-    <string name="see_all">See All</string>
-    <string name="food">Food</string>
-    <string name="distance">20 near you</string>
-    <string name="beverages">Beverages</string>
-    <string name="groceries">Groceries</string>
+    <string name="categories">Kategori</string>
+    <string name="see_all">Lihat Semua</string>
+    <string name="food">Makanan</string>
+    <string name="distance">20 didekat anda</string>
+    <string name="beverages">Makanan dan Minuman</string>
+    <string name="groceries">Grosir</string>
     <string name="value_by">Value By</string>
-    <string name="product1">Product 1</string>
+    <string name="product1">Produck 1</string>
     <string name="price_valueby">$1.50</string>
     <string name="img_canvas">img_canvas</string>
     <string name="pro_feature">pro feature</string>
@@ -109,19 +110,19 @@
     <string name="employee">Employee</string>
     <string name="employee_profile">Employee Profile</string>
     <string name="attendance_detail">Attendance</string>
-    <string name="this_month">This month</string>
+    <string name="this_month">Bulan ini</string>
     <string name="performance">Performance</string>
     <string name="access_token">access_token</string>
-    <string name="add_transaction">Add transaction</string>
-    <string name="stock">Stock :</string>
-    <string name="price_detail">Price :</string>
-    <string name="transaction_summary">Transaction Summary</string>
-    <string name="order_summary">Order Summary</string>
-    <string name="payment_method">Payment Method</string>
-    <string name="payment_summary">Payment Summary</string>
-    <string name="total_payment">Total Payment</string>
-    <string name="tax_10">Tax(10%)</string>
-    <string name="new_transaction">New Transaction</string>
+    <string name="add_transaction">Tambahkan Penjualan</string>
+    <string name="stock">Stok :</string>
+    <string name="price_detail">Harga :</string>
+    <string name="transaction_summary">Rangkuman Transaksi</string>
+    <string name="order_summary">Rangkuman Pesanan</string>
+    <string name="payment_method">Metode Pembayaran</string>
+    <string name="payment_summary">Rangkuman Pembayaran</string>
+    <string name="total_payment">Total Pembayaran</string>
+    <string name="tax_10">Pajak(10%)</string>
+    <string name="new_transaction">Proses Transaksi</string>
     <string name="successful_transaction">Successful Transaction</string>
     <string name="total">Total</string>
     <string name="print">Print</string>
@@ -137,7 +138,7 @@
     <string name="dummy_term">Ariana Grande</string>
     <string name="dummy_number_search">20k+ searches</string>
     <string name="year_in_search">Year In Search</string>
-    <string name="succesful_transaction">Transaction Success</string>
+    <string name="succesful_transaction">Transaksi Berhasil</string>
     <string name="explore">Explore</string>
     <string name="btn_delete">btn delete</string>
     <string name="btn_edit">btn_edit</string>
@@ -156,26 +157,26 @@
     <string name="popular_city">Popular city</string>
     <string name="find_out_what_in">Find out what\'s in</string>
     <string name="summary">Summary</string>
-    <string name="details">Details</string>
-    <string name="product_details">Product Details</string>
+    <string name="details">Detail</string>
+    <string name="product_details">Detail Produk</string>
     <string name="product_in_catalog_menu">Product in Catalog Menu</string>
-    <string name="edit_product">Edit Product</string>
-    <string name="delete_product">Delete %s</string>
-    <string name="delete">Delete</string>
-    <string name="date">Date</string>
+    <string name="edit_product">Sunting Produk</string>
+    <string name="delete_product">Hapus %s</string>
+    <string name="delete">Hapus</string>
+    <string name="date">Tanggal</string>
     <string name="related_queries">Related Queries</string>
     <string name="predict_sales">Predict your sales</string>
-    <string name="sales">Sales</string>
+    <string name="sales">Penjualan</string>
     <string name="sales_prediction">Sales Prediction</string>
     <string name="prediction_product">Prediction Product</string>
     <string name="current_sales">Current sales</string>
     <string name="format_amount">%.0f</string>
-    <string name="password">Password</string>
-    <string name="don_t_have_an_account_yet">Don\'t have an account yet ?</string>
+    <string name="password">Kata Sandi</string>
+    <string name="don_t_have_an_account_yet">Belum punya akun ?</string>
 
     <string-array name="paymentMethod">
-        <item>Cash</item>
-        <item>E-Wallet</item>
+        <item>Tunai</item>
+        <item>Dompet digital</item>
     </string-array>
 
     <string-array name="relatedQueries">
@@ -184,46 +185,45 @@
     </string-array>
 
     <string-array name="duration">
-        <item>Last 7 days</item>
-        <item>Last 30 days</item>
+        <item>7 hari terakhir</item>
+        <item>30 hari terakhir</item>
     </string-array>
 
-    <string name="title_activity_add_business">AddBusiness</string>
+    <string name="title_activity_add_business">Tambahkan bisnis</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="next">Lanjut</string>
+    <string name="previous">Kembali</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="logout">Logout</string>
+    <string name="logout">Keluar</string>
     <string name="email">Email</string>
-    <string name="add_purchase">Add Purchase</string>
-    <string name="description">Description:</string>
-    <string name="edit_business">Edit Business</string>
-    <string name="create_product">Create Product</string>
-    <string name="create_purchase">Create Purchase</string>
-    <string name="total_price">Total Buy Price</string>
-    <string name="edit_purchase">Edit Purchase</string>
-    <string name="settings">Settings</string>
-    <string name="financial_report">Financial Report</string>
-    <string name="click_for_more">Click for more</string>
-    <string name="remove">Remove</string>
-    <string name="all_items">All items</string>
-    <string name="language">Language</string>
-    <string name="purchase">Purchase</string>
-    <string name="delete_confirmation">Are you sure you want to\n delete this %s?</string>
-    <string name="this_product_is_sold">This Product is Sold</string>
-    <string name="item_quantity">Item Quantity</string>
-    <string name="add_items">Add Items</string>
-    <string name="back_to_dashboard">Back To Dashboard</string>
-    <string name="total_outcome">Total Outcome</string>
-    <string name="total_income">Total Income</string>
-    <string name="net_sales_cogs">net sales - cogs</string>
-    <string name="net_sales_transaction">net sales/number of sales</string>
-    <string name="total_transaction">Total Transaction</string>
-    <string name="transaction_report">Transaction</string>
-
+    <string name="add_purchase">Tambahkan Pembelian</string>
+    <string name="description">Deskripsi:</string>
+    <string name="edit_business">Sunting Bisnis</string>
+    <string name="create_product">Tambahkan Produk</string>
+    <string name="create_purchase">Tambahkan Pembelian</string>
+    <string name="total_price">Total harga pembelian</string>
+    <string name="edit_purchase">Sunting Pembelian</string>
+    <string name="settings">Pengaturan</string>
+    <string name="financial_report">Laporan Keuangan</string>
+    <string name="click_for_more">Klik untuk detail</string>
+    <string name="remove">Hapus</string>
+    <string name="all_items">Semua Barang</string>
+    <string name="language">Bahasa</string>
+    <string name="purchase">Pembelian</string>
+    <string name="delete_confirmation">Apa anda yakin ingin\n menghapus %s ini?</string>
+    <string name="this_product_is_sold">Produk ini dijual</string>
+    <string name="item_quantity">Jumlah Barang</string>
+    <string name="add_items">Tambahkan barang</string>
+    <string name="back_to_dashboard">Kembali</string>
+    <string name="total_outcome">Total Pengeluaran</string>
+    <string name="total_income">Total Pemasukan</string>
+    <string name="net_sales_cogs">Penjualan bersih - HPP</string>
+    <string name="net_sales_transaction">Penjualan bersih/jumlah penjualan</string>
+    <string name="total_transaction">Total transaksi</string>
+    <string name="transaction_report">Transaksi</string>
 
 </resources>

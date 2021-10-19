@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.example.usahaq_skripsi.R
 import com.example.usahaq_skripsi.databinding.ActivityDetailPurchaseBinding
 import com.example.usahaq_skripsi.databinding.SheetDeleteProductBinding
 import com.example.usahaq_skripsi.model.Product
@@ -97,6 +98,9 @@ class DetailPurchaseActivity : AppCompatActivity() {
         }
         sheetDialog.window?.statusBarColor = 0x04000000
         sheetDialog.show()
+
+        sheet.tvConfirm.text = getString(R.string.delete_confirmation, getString(R.string.purchase))
+        sheet.tvDeleteProduct.text = getString(R.string.delete_product, getString(R.string.purchase))
 
         sheet.btnConfirmation.setOnClickListener {
             viewModel.deletePurchase(purchaseId!!)

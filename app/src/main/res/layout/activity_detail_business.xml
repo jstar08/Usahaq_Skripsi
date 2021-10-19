@@ -107,21 +107,23 @@
                 android:textSize="24sp" />
 
             <TextView
+                android:id="@+id/tv_incomeAmount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="@id/tv_income"
                 app:layout_constraintTop_toBottomOf="@id/tv_income"
-                android:text="Rp.120000"
+                tools:text="Rp.120000"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_marginTop="8dp"/>
 
             <TextView
+                android:id="@+id/tv_outcomeAmount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="@id/tv_outcome"
                 app:layout_constraintTop_toBottomOf="@id/tv_outcome"
-                android:text="Rp.80000"
+                tools:text="Rp.80000"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:layout_marginTop="8dp"/>

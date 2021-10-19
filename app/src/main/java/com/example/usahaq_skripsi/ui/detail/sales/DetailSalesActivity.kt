@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.usahaq_skripsi.R
 import com.example.usahaq_skripsi.adapter.SalesDetailAdapter
 import com.example.usahaq_skripsi.databinding.ActivityDetailSalesBinding
 import com.example.usahaq_skripsi.databinding.SheetDeleteProductBinding
@@ -93,7 +94,7 @@ class DetailSalesActivity : AppCompatActivity() {
                 productSold.addAll(result)
                 rvProductSales.layoutManager = LinearLayoutManager(this@DetailSalesActivity)
                 initTotalPrice()
-                tvTotalPaymentAmount.text = salesData.totalPrice
+                tvTotalPaymentAmount.text = "Rp.${salesData.totalPrice}"
                 binding.shimmerLayout.visibility = View.GONE
             })
         }
@@ -108,6 +109,9 @@ class DetailSalesActivity : AppCompatActivity() {
         }
         sheetDialog.window?.statusBarColor = 0x04000000
         sheetDialog.show()
+
+        sheet.tvConfirm.text = getString(R.string.delete_confirmation, getString(R.string.sales))
+        sheet.tvDeleteProduct.text = getString(R.string.delete_product, getString(R.string.sales))
 
         sheet.btnConfirmation.setOnClickListener {
             deleteSales()

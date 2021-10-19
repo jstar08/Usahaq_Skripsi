@@ -129,7 +129,7 @@ class EditPurchaseActivity : AppCompatActivity() {
         val day = c.get(Calendar.DAY_OF_MONTH)
         val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
             // Display Selected date in TextView
-            binding.etDate.setText("$dayOfMonth - $monthOfYear - $year")
+            binding.etDate.setText("$dayOfMonth-${monthOfYear.plus(1)}-$year")
         }, year, month, day)
         dpd.show()
     }

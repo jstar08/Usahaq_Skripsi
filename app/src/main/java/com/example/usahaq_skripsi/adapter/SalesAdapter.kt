@@ -19,7 +19,7 @@ class SalesAdapter : RecyclerView.Adapter<SalesAdapter.ViewHolder>() {
             val context = binding.root.context
             binding.apply {
                 tvProductName.text = salesData.salesId
-                tvPrice.text = salesData.totalPrice
+                tvPrice.text = "Rp.${salesData.totalPrice}"
             }
             Glide.with(context).load(R.drawable.saleslogo).into(binding.ivProduct)
 

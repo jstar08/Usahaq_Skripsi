@@ -17,6 +17,9 @@
         android:theme="@style/Theme.Usahaq_Skripsi"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.detail.financial_report.FinancialReportActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.setting.SettingActivity"
             android:exported="true" />
         <activity

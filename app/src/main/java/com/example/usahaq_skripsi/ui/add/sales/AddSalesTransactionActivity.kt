@@ -76,6 +76,8 @@ class AddSalesTransactionActivity : AppCompatActivity(), SalesProductAdapter.OnC
                 intent.putExtra(CheckoutActivity.BUSINESS, business)
                 startActivity(intent)
             }
+
+
         }
     }
 

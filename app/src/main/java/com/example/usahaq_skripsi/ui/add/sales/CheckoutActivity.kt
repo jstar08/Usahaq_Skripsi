@@ -99,13 +99,13 @@ class CheckoutActivity : AppCompatActivity() {
         price+=price.div(10)
         binding.tvTotalPaymentAmount.text = "Rp.$price"
         binding.tvButtonQuantity.text = "$number items"
+        sales.totalPrice = price.toString()
     }
 
     private fun addSales(){
         sales.businessId = business.businessId
         sales.salesId = salesId
         sales.date = binding.tvDate.text.toString()
-        sales.totalPrice = binding.tvTotalPaymentAmount.text.toString()
         sales.paymentMethod = binding.spinnerPaymentMethod.selectedItem.toString()
         viewmodel.addSales(sales, productSold)
         editStock()

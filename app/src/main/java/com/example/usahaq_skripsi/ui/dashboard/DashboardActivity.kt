@@ -10,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.example.usahaq_skripsi.adapter.BusinessAdapter
 import com.example.usahaq_skripsi.databinding.ActivityDashboardBinding
 import com.example.usahaq_skripsi.ui.add.business.AddBusinessActivity
+import com.example.usahaq_skripsi.ui.setting.SettingActivity
 import com.example.usahaq_skripsi.util.ViewModelFactory
 import com.example.usahaq_skripsi.viewmodel.AuthViewModel
 import com.example.usahaq_skripsi.viewmodel.BusinessViewModel
@@ -46,7 +47,7 @@ class DashboardActivity : AppCompatActivity() {
 
         binding.apply {
             btnSettings.setOnClickListener {
-
+                startActivity(Intent(this@DashboardActivity, SettingActivity::class.java))
             }
 
             fabAddBusiness.setOnClickListener {
