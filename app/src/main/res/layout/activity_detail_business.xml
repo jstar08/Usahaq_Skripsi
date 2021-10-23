@@ -193,8 +193,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:fab_addButtonColorNormal="@color/blue_addButton"
+        app:fab_addButtonColorPressed="@color/blue_addButton"
         app:fab_addButtonPlusIconColor="@color/light_orange"
         app:fab_labelStyle="@style/menu_labels_style"
+        app:fab_addButtonStrokeVisible="true"
         app:fab_labelsPosition="left">
 
         <com.getbase.floatingactionbutton.FloatingActionButton
@@ -203,7 +205,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/sell"
             android:backgroundTint="@color/blue_addButton"
-            app:fab_title="@string/add_transaction" />
+            app:fab_title="@string/add_transaction"/>
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_addPurchase"

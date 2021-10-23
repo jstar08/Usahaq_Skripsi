@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-
-
     <style name="tl_dashboard" parent="Widget.Design.TabLayout">
         <item name="tabTextAppearance">@style/tl_dashboard_text</item>
     </style>
@@ -15,10 +12,6 @@
 
     <style name="MyCustomTabText" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">12sp</item>
-    </style>
-
-    <style name="menu_labels_style">
-        <item name="android:textColor">@color/orange</item>
     </style>
 
     <style name="SwitchTheme" parent="Theme.AppCompat.Light">
@@ -37,6 +30,11 @@
     <style name="AppModalStyle"
         parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@drawable/cornercircle</item>
+    </style>
+
+    <style name="menu_labels_style">
+        <item name="android:background">@drawable/fab_label_background</item>
+        <item name="android:textColor">@color/orange</item>
     </style>
 
 </resources>
