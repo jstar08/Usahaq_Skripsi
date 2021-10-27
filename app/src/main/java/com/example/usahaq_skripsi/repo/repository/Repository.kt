@@ -192,6 +192,37 @@ class Repository(val auth : FirebaseAuth, val firestore: FirebaseFirestore, val 
         return productData
     }
 
+    override fun searchProduct(query: String, businessId: String): LiveData<List<Product>> {
+        val productData = MutableLiveData<List<Product>>()
+        val productList = ArrayList<Product>()
+        firestore.collection("product").whereEqualTo("businessId", businessId)
+            .get()
+            .addOnSuccessListener { documents ->
+                Log.d("Search Product", "Product succesfully shown")
+                for(document in documents) {
+                    val name = document.getString("name").toString().lowercase()
+                    if (name.contains(query.lowercase())){
+                        productList.add(
+                            Product(
+                                productId = document.getString("productId").toString(),
+                                businessId = document.getString("businessId").toString(),
+                                name = document.getString("name").toString(),
+                                stocks = document.getString("stocks").toString(),
+                                price = document.getString("price").toString(),
+                                imageUrl = document.getString("imageUrl").toString(),
+                                description = document.getString("description").toString()
+                            )
+                        )
+                    }
+                }
+                productData.postValue(productList)
+            }
+            .addOnFailureListener { e ->
+                Log.e("Search Product", "$e")
+            }
+        return productData
+    }
+
     override fun editProduct(product: Product) {
         firestore.collection("product").document(product.productId!!)
             .update("description", product.description, "imageUrl", product.imageUrl,

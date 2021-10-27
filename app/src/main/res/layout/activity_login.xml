@@ -85,7 +85,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/tv_account"
         app:layout_constraintBottom_toTopOf="@id/btn_login"
-        android:text="Sign Up Now"
+        android:text="@string/sign_up_now"
         android:textColor="@color/orange_recommendation"
         android:fontFamily="@font/rubik_light"
         android:textSize="12sp"
@@ -111,7 +111,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/btn_addbusiness"
+                android:text="@string/login"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="18dp"

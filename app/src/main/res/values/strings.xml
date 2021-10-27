@@ -224,6 +224,7 @@
     <string name="net_sales_transaction">net sales/number of sales</string>
     <string name="total_transaction">Total Transaction</string>
     <string name="transaction_report">Transaction</string>
+    <string name="sign_up_now">Sign Up Now</string>
 
 
 </resources>

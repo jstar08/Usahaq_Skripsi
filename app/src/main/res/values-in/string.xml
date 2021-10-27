@@ -225,5 +225,6 @@
     <string name="net_sales_transaction">Penjualan bersih/jumlah penjualan</string>
     <string name="total_transaction">Total transaksi</string>
     <string name="transaction_report">Transaksi</string>
+    <string name="sign_up_now">Daftar Sekarang</string>
 
 </resources>

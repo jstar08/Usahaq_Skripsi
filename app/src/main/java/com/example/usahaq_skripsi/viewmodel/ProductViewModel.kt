@@ -20,4 +20,7 @@ class ProductViewModel(private val mRepository: Repository) : ViewModel() {
     fun detailProduct(productId : String) : LiveData<Product> = mRepository.detailProduct(productId)
 
     fun deleteProduct(productId : String) = mRepository.deleteProduct(productId)
+
+    fun searchProduct(query : String, businessId: String) : LiveData<List<Product>>
+    = mRepository.searchProduct(query, businessId)
 }

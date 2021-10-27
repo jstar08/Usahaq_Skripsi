@@ -26,6 +26,8 @@ interface DataSource {
 
     fun showListProduct(businessId: String) : LiveData<List<Product>>
 
+    fun searchProduct(query: String, businessId: String) : LiveData<List<Product>>
+
     fun editProduct(product : Product)
 
     fun detailProduct(productId : String) : LiveData<Product>

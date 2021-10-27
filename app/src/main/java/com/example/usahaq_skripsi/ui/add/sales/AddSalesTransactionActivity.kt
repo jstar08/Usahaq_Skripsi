@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
@@ -41,7 +42,7 @@ class AddSalesTransactionActivity : AppCompatActivity(), SalesProductAdapter.OnC
 
     override fun onResume() {
         super.onResume()
-        showProduct(adapter)
+        showAllProduct(adapter)
         totalAmount = 0
         productSales.clear()
         binding.btnConfirmation.visibility = View.GONE
@@ -77,11 +78,41 @@ class AddSalesTransactionActivity : AppCompatActivity(), SalesProductAdapter.OnC
                 startActivity(intent)
             }
 
+            searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    if(query!=null){
+                        if(query.isNotEmpty()){
+                            binding.rvProduct.visibility = View.GONE
+                            searchProduct(query)
+                        }
+                    }
+                    return true
+                }
+
+                override fun onQueryTextChange(newText: String?): Boolean = false
+
+            })
+
+            searchView.setOnCloseListener {
+                binding.rvProduct.visibility = View.GONE
+                showAllProduct(adapter)
+                true
+            }
 
         }
     }
 
-    private fun showProduct(adapter: SalesProductAdapter){
+    private fun searchProduct(query : String){
+        productViewModel.searchProduct(query, business.businessId!!).observe(this, {result ->
+            adapter.productData.clear()
+            val productSales = productInToProductSales(result)
+            adapter.productData.addAll(productSales)
+            binding.rvProduct.visibility = View.VISIBLE
+            binding.rvProduct.adapter = adapter
+        })
+    }
+
+    private fun showAllProduct(adapter: SalesProductAdapter){
         productViewModel.showListProduct(business.businessId!!).observe(this, { result ->
             adapter.productData.clear()
             val productSales = productInToProductSales(result)
