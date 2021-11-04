@@ -1,5 +1,6 @@
 package com.example.usahaq_skripsi.ui.detail.business.tablayout
 
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,9 +12,13 @@ import com.example.usahaq_skripsi.R
 import com.example.usahaq_skripsi.adapter.ProductAdapter
 import com.example.usahaq_skripsi.adapter.PurchaseAdapter
 import com.example.usahaq_skripsi.databinding.FragmentPurchaseBinding
+import com.example.usahaq_skripsi.model.Purchase
+import com.example.usahaq_skripsi.model.Sales
 import com.example.usahaq_skripsi.util.ViewModelFactory
 import com.example.usahaq_skripsi.viewmodel.PurchaseViewModel
 import com.facebook.shimmer.ShimmerFrameLayout
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 class PurchaseFragment (private val businessId : String) : Fragment() {
 
@@ -54,9 +59,16 @@ class PurchaseFragment (private val businessId : String) : Fragment() {
     }
 
     private fun showProduct(adapter: PurchaseAdapter){
+        val dateTimeFormatter: DateTimeFormatter = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            DateTimeFormatter.ofPattern("d-MM-yyyy")
+        } else {
+            TODO("VERSION.SDK_INT < O")
+        }
         viewModel.showListPurchase(businessId).observe(this, { result ->
             adapter.purchaseData.clear()
             adapter.purchaseData.addAll(result)
+            adapter.purchaseData.sortByDescending { purchaseData : Purchase ->
+                LocalDate.parse(purchaseData.date, dateTimeFormatter)}
             shimmerRv.visibility = View.GONE
             binding.rvPurchase.visibility = View.VISIBLE
             binding.rvPurchase.adapter = adapter

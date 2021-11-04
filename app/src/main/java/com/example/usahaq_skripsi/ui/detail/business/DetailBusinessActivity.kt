@@ -1,6 +1,7 @@
 package com.example.usahaq_skripsi.ui.detail.business
 
 import android.content.Intent
+import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
@@ -18,6 +19,8 @@ import com.example.usahaq_skripsi.util.ViewModelFactory
 import com.example.usahaq_skripsi.viewmodel.BusinessViewModel
 import com.example.usahaq_skripsi.viewmodel.PurchaseViewModel
 import com.example.usahaq_skripsi.viewmodel.SalesViewModel
+import com.getkeepsafe.taptargetview.TapTarget
+import com.getkeepsafe.taptargetview.TapTargetSequence
 import com.google.android.material.tabs.TabLayoutMediator
 
 class DetailBusinessActivity : AppCompatActivity() {
@@ -90,6 +93,10 @@ class DetailBusinessActivity : AppCompatActivity() {
                 startActivity(intent)
             }
 
+            btnInfo.setOnClickListener {
+                tutorial()
+            }
+
 
             viewpagerDetail.adapter = adapter
             viewpagerDetail.offscreenPageLimit = adapter.itemCount
@@ -127,6 +134,86 @@ class DetailBusinessActivity : AppCompatActivity() {
             }
             binding.tvIncomeAmount.text = "Rp.$totalSales"
         })
+    }
+
+    private fun tutorial(){
+        binding.apply {
+            TapTargetSequence(this@DetailBusinessActivity)
+                .targets(
+                    TapTarget.forView(btnAddProduct,
+                        getString(R.string.floating_action_menu),
+                        getString(R.string.fam_desc))
+                        .outerCircleColor(R.color.light_blue)
+                        .outerCircleAlpha(0.96f)
+                        .targetCircleColor(R.color.white)
+                        .titleTextSize(20)
+                        .titleTextColor(R.color.white)
+                        .descriptionTextSize(15)
+                        .descriptionTextColor(R.color.white)
+                        .textColor(R.color.white)
+                        .textTypeface(Typeface.SANS_SERIF)
+                        .dimColor(R.color.black)
+                        .drawShadow(true)
+                        .cancelable(false)
+                        .tintTarget(true)
+                        .transparentTarget(true)
+                        .targetRadius(45),
+                    TapTarget.forView(cvClipboard,
+                        getString(R.string.financial_report),
+                        getString(R.string.financial_desc))
+                        .outerCircleColor(R.color.light_blue)
+                        .outerCircleAlpha(0.96f)
+                        .targetCircleColor(R.color.white)
+                        .titleTextSize(20)
+                        .titleTextColor(R.color.white)
+                        .descriptionTextSize(15)
+                        .descriptionTextColor(R.color.white)
+                        .textColor(R.color.white)
+                        .textTypeface(Typeface.SANS_SERIF)
+                        .dimColor(R.color.black)
+                        .drawShadow(true)
+                        .cancelable(false)
+                        .tintTarget(true)
+                        .transparentTarget(true)
+                        .targetRadius(120),
+                    TapTarget.forView(tableLayoutDetail,
+                        getString(R.string.tab_layout_detail),
+                        getString(R.string.tabDesc))
+                        .outerCircleColor(R.color.light_blue)
+                        .outerCircleAlpha(0.96f)
+                        .targetCircleColor(R.color.white)
+                        .titleTextSize(20)
+                        .titleTextColor(R.color.white)
+                        .descriptionTextSize(15)
+                        .descriptionTextColor(R.color.white)
+                        .textColor(R.color.white)
+                        .textTypeface(Typeface.SANS_SERIF)
+                        .dimColor(R.color.black)
+                        .drawShadow(true)
+                        .cancelable(false)
+                        .tintTarget(true)
+                        .transparentTarget(true)
+                        .targetRadius(180),
+                    TapTarget.forView(btnInfo,
+                        getString(R.string.info_button),
+                        getString(R.string.info_desc))
+                        .outerCircleColor(R.color.light_blue)
+                        .outerCircleAlpha(0.96f)
+                        .targetCircleColor(R.color.white)
+                        .titleTextSize(20)
+                        .titleTextColor(R.color.white)
+                        .descriptionTextSize(15)
+                        .descriptionTextColor(R.color.white)
+                        .textColor(R.color.white)
+                        .textTypeface(Typeface.SANS_SERIF)
+                        .dimColor(R.color.black)
+                        .drawShadow(true)
+                        .cancelable(false)
+                        .tintTarget(true)
+                        .transparentTarget(true)
+                        .targetRadius(30)
+                ).start()
+        }
     }
 
     companion object{

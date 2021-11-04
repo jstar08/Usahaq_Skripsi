@@ -226,5 +226,12 @@
     <string name="total_transaction">Total transaksi</string>
     <string name="transaction_report">Transaksi</string>
     <string name="sign_up_now">Daftar Sekarang</string>
+    <string name="floating_action_menu">Tombol tambah</string>
+    <string name="fam_desc">Ini adalah tombol untuk menambahkan produk, pembelian maupun penjualan umkm anda</string>
+    <string name="financial_desc">Ini adalah bagian yang menampilkan pemasukan dan pengeluaran umkm anda</string>
+    <string name="info_button">Tombol info</string>
+    <string name="info_desc">Jika anda perlu melihat tutorial ini kembali, klik tombol ini</string>
+    <string name="tab_layout_detail">Detail UMKM</string>
+    <string name="tabDesc">Produk adalah daftar produk yang UMKM anda miliki\n\nPembelian adalah daftar barang yang anda beli yang digunakan untuk produksi atau untuk dijual kembali\n\nPenjualan adalah daftar transaksi penjualan produk anda</string>
 
 </resources>

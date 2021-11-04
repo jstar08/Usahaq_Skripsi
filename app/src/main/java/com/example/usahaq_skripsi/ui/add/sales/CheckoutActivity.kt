@@ -81,7 +81,7 @@ class CheckoutActivity : AppCompatActivity() {
 
     private fun initDate(){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            simpleDate = SimpleDateFormat("dd-M-yyyy, h:mm a", Locale.getDefault())
+            simpleDate = SimpleDateFormat("d-M-yyyy, h:mm a", Locale.getDefault())
         }
         calendar = Calendar.getInstance()
         binding.tvDate.text = simpleDate.format(calendar.time)

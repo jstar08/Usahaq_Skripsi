@@ -225,6 +225,13 @@
     <string name="total_transaction">Total Transaction</string>
     <string name="transaction_report">Transaction</string>
     <string name="sign_up_now">Sign Up Now</string>
+    <string name="floating_action_menu">Floating Action Menu</string>
+    <string name="fam_desc">this is a button to add your product, purchase and sales</string>
+    <string name="financial_desc">this is where you find the summary of your income and outcome</string>
+    <string name="info_button">Info Button</string>
+    <string name="info_desc">If you need to see this tutorial again, click this button</string>
+    <string name="tab_layout_detail">Business Detail</string>
+    <string name="tabDesc">Product are list of products that your business have\' product\n\nPurchases are list of items that you bought whether for production or to be sold again\n\nSales are list of transaction of product that you sold to your consumer</string>
 
 
 </resources>
