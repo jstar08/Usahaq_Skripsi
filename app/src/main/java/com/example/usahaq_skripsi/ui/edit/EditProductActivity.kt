@@ -10,6 +10,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.example.usahaq_skripsi.R
 import com.example.usahaq_skripsi.databinding.ActivityEditProductBinding
 import com.example.usahaq_skripsi.model.Business
 import com.example.usahaq_skripsi.model.Product
@@ -55,7 +56,9 @@ class EditProductActivity : AppCompatActivity() {
                 .into(profileProduct)
 
             btnEditProduct.setOnClickListener {
-                editProduct(productData!!)
+                if(!isFieldEmpty()){
+                    editProduct(productData!!)
+                }
             }
 
             profileProduct.setOnClickListener {
@@ -85,6 +88,28 @@ class EditProductActivity : AppCompatActivity() {
         viewModel.editProduct(product)
         if(isSuccess){
             finish()
+        }
+    }
+
+    private fun isFieldEmpty() : Boolean{
+        binding.apply {
+            if(etProduct.text.isEmpty()){
+                etProduct.error = getString(R.string.emptyField)
+                return true
+            }
+            if(etDesc.text.isEmpty()){
+                etDesc.error = getString(R.string.emptyField)
+                return true
+            }
+            if(etStocks.text.isEmpty()){
+                etStocks.error = getString(R.string.emptyField)
+                return true
+            }
+            if (etSell.text.isEmpty()){
+                etSell.error = getString(R.string.emptyField)
+                return true
+            }
+            else return false
         }
     }
 

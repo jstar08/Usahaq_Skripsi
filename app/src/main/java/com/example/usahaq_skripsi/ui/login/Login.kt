@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
+import com.example.usahaq_skripsi.R
 import com.example.usahaq_skripsi.databinding.ActivityLoginBinding
 import com.example.usahaq_skripsi.ui.dashboard.DashboardActivity
 import com.example.usahaq_skripsi.ui.register.Register
@@ -37,12 +38,12 @@ class Login : AppCompatActivity() {
                 val email  = etUsername.text.toString()
                 val password = etPassword.text.toString()
                 if(etUsername.text.trim().isEmpty() && etPassword.text.trim().isEmpty()){
-                    etUsername.error = "This field can't be empty"
-                    etPassword.error = "This field can't be empty"
+                    etUsername.error = getString(R.string.emptyField)
+                    etPassword.error = getString(R.string.emptyField)
                 } else if(etUsername.text.trim().isEmpty()) {
-                    etUsername.error = "This field can't be empty"
+                    etUsername.error = getString(R.string.emptyField)
                 } else if(etPassword.text.trim().isEmpty()){
-                    etPassword.error = "This field can't be empty"
+                    etPassword.error = getString(R.string.emptyField)
                 } else {
                     viewModel.signIn(email , password)
                 }

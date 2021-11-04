@@ -231,7 +231,11 @@
     <string name="info_button">Info Button</string>
     <string name="info_desc">If you need to see this tutorial again, click this button</string>
     <string name="tab_layout_detail">Business Detail</string>
-    <string name="tabDesc">Product are list of products that your business have\' product\n\nPurchases are list of items that you bought whether for production or to be sold again\n\nSales are list of transaction of product that you sold to your consumer</string>
+    <string name="productDesc">Product are list of products that your business have\' product</string>
+    <string name="purchaseDesc">Purchases are list of items that you bought whether for production or to be sold again</string>
+    <string name="sellDesc">Sales are list of transaction of product that you sold to your consumer</string>
+    <string name="emptyField">This field can\'t be empty</string>
+    <string name="emptyPict">You need to set a picture</string>
 
 
 </resources>

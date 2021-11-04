@@ -12,6 +12,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.example.usahaq_skripsi.R
 import com.example.usahaq_skripsi.databinding.ActivityAddPurchaseBinding
 import com.example.usahaq_skripsi.model.Business
 import com.example.usahaq_skripsi.model.Product
@@ -70,7 +71,7 @@ class AddPurchaseActivity : AppCompatActivity() {
             }
 
             btnAddPurchase.setOnClickListener {
-                addPurchase()
+                if(!isFieldEmpty()) addPurchase()
             }
 
             btnBack.setOnClickListener {
@@ -79,6 +80,44 @@ class AddPurchaseActivity : AppCompatActivity() {
             switchButton.setOnClickListener {
                 showProductPrice()
             }
+        }
+    }
+
+    private fun isFieldEmpty() : Boolean{
+        binding.apply {
+            if(etProduct.text.isEmpty()){
+                etProduct.error = getString(R.string.emptyField)
+                return true
+            }
+            if (imageUri==null){
+                Toast.makeText(this@AddPurchaseActivity, getString(R.string.emptyPict), Toast.LENGTH_SHORT).show()
+                return true
+            }
+
+            if(etStocks.text.isEmpty()){
+                etStocks.error = getString(R.string.emptyField)
+                return true
+            }
+            if (etPrice.text.isEmpty()){
+                etPrice.error = getString(R.string.emptyField)
+                return true
+            }
+            if(etDate.text.isEmpty()){
+                etDate.error = getString(R.string.emptyField)
+                return true
+            }
+            if(switchButton.isChecked){
+                if(etDesc.text.isEmpty()){
+                    etDesc.error = getString(R.string.emptyField)
+                    return true
+                }
+                if(etSales.text.isEmpty()){
+                    etSales.error = getString(R.string.emptyField)
+                    return true
+                }
+                else return false
+            }
+            else return false
         }
     }
 

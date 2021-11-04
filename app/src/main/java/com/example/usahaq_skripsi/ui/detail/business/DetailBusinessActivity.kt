@@ -1,15 +1,16 @@
 package com.example.usahaq_skripsi.ui.detail.business
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.view.get
 import androidx.lifecycle.ViewModelProvider
 import com.example.usahaq_skripsi.R
 import com.example.usahaq_skripsi.databinding.ActivityDetailBusinessBinding
 import com.example.usahaq_skripsi.model.Business
-import com.example.usahaq_skripsi.model.Purchase
-import com.example.usahaq_skripsi.model.Sales
 import com.example.usahaq_skripsi.ui.add.product.AddProductActivity
 import com.example.usahaq_skripsi.ui.add.purchase.AddPurchaseActivity
 import com.example.usahaq_skripsi.ui.add.sales.AddSalesTransactionActivity
@@ -22,6 +23,12 @@ import com.example.usahaq_skripsi.viewmodel.SalesViewModel
 import com.getkeepsafe.taptargetview.TapTarget
 import com.getkeepsafe.taptargetview.TapTargetSequence
 import com.google.android.material.tabs.TabLayoutMediator
+import android.widget.LinearLayout
+
+import android.widget.TextView
+
+
+
 
 class DetailBusinessActivity : AppCompatActivity() {
 
@@ -36,6 +43,9 @@ class DetailBusinessActivity : AppCompatActivity() {
     private var totalBuy = 0
     private var totalSales = 0
 
+    lateinit var prefrence : SharedPreferences
+    val pref_show_intro = "Intro"
+
     override fun onResume() {
         super.onResume()
         loadBusinessData(businessId!!)
@@ -47,6 +57,8 @@ class DetailBusinessActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         businessId = intent.getStringExtra(BUSINESS_ID)
+
+        prefrence = getSharedPreferences("tutorial", Context.MODE_PRIVATE)
 
         val factory = ViewModelFactory.getInstance(this)
         viewModel = ViewModelProvider(this, factory)[BusinessViewModel::class.java]
@@ -111,6 +123,10 @@ class DetailBusinessActivity : AppCompatActivity() {
                 }
             }.attach()
         }
+
+        if(prefrence.getBoolean(pref_show_intro, true)){
+            tutorial()
+        }
     }
 
     private fun loadBusinessData(businessId : String){
@@ -135,6 +151,8 @@ class DetailBusinessActivity : AppCompatActivity() {
             binding.tvIncomeAmount.text = "Rp.$totalSales"
         })
     }
+
+
 
     private fun tutorial(){
         binding.apply {
@@ -176,9 +194,11 @@ class DetailBusinessActivity : AppCompatActivity() {
                         .tintTarget(true)
                         .transparentTarget(true)
                         .targetRadius(120),
-                    TapTarget.forView(tableLayoutDetail,
-                        getString(R.string.tab_layout_detail),
-                        getString(R.string.tabDesc))
+                    TapTarget.forView(
+                        ((tableLayoutDetail.getChildAt(0) as LinearLayout).getChildAt(0)
+                                as LinearLayout).getChildAt(1) as TextView,
+                        getString(R.string.product),
+                        getString(R.string.productDesc))
                         .outerCircleColor(R.color.light_blue)
                         .outerCircleAlpha(0.96f)
                         .targetCircleColor(R.color.white)
@@ -193,7 +213,47 @@ class DetailBusinessActivity : AppCompatActivity() {
                         .cancelable(false)
                         .tintTarget(true)
                         .transparentTarget(true)
-                        .targetRadius(180),
+                        .targetRadius(60),
+                    TapTarget.forView(
+                        ((tableLayoutDetail.getChildAt(0) as LinearLayout).getChildAt(1)
+                                as LinearLayout).getChildAt(1) as TextView,
+                        getString(R.string.purchase),
+                        getString(R.string.purchaseDesc))
+                        .outerCircleColor(R.color.light_blue)
+                        .outerCircleAlpha(0.96f)
+                        .targetCircleColor(R.color.white)
+                        .titleTextSize(20)
+                        .titleTextColor(R.color.white)
+                        .descriptionTextSize(15)
+                        .descriptionTextColor(R.color.white)
+                        .textColor(R.color.white)
+                        .textTypeface(Typeface.SANS_SERIF)
+                        .dimColor(R.color.black)
+                        .drawShadow(true)
+                        .cancelable(false)
+                        .tintTarget(true)
+                        .transparentTarget(true)
+                        .targetRadius(60),
+                    TapTarget.forView(
+                        ((tableLayoutDetail.getChildAt(0) as LinearLayout).getChildAt(2)
+                                as LinearLayout).getChildAt(1) as TextView,
+                        getString(R.string.sales),
+                        getString(R.string.sellDesc))
+                        .outerCircleColor(R.color.light_blue)
+                        .outerCircleAlpha(0.96f)
+                        .targetCircleColor(R.color.white)
+                        .titleTextSize(20)
+                        .titleTextColor(R.color.white)
+                        .descriptionTextSize(15)
+                        .descriptionTextColor(R.color.white)
+                        .textColor(R.color.white)
+                        .textTypeface(Typeface.SANS_SERIF)
+                        .dimColor(R.color.black)
+                        .drawShadow(true)
+                        .cancelable(false)
+                        .tintTarget(true)
+                        .transparentTarget(true)
+                        .targetRadius(60),
                     TapTarget.forView(btnInfo,
                         getString(R.string.info_button),
                         getString(R.string.info_desc))
@@ -214,6 +274,9 @@ class DetailBusinessActivity : AppCompatActivity() {
                         .targetRadius(30)
                 ).start()
         }
+        val editor = prefrence.edit()
+        editor.putBoolean(pref_show_intro, false)
+        editor.apply()
     }
 
     companion object{

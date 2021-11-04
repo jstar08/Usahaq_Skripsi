@@ -10,6 +10,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.example.usahaq_skripsi.R
 import com.example.usahaq_skripsi.databinding.ActivityAddBusinessBinding
 import com.example.usahaq_skripsi.model.Business
 import com.example.usahaq_skripsi.util.ViewModelFactory
@@ -49,7 +50,7 @@ class AddBusinessActivity : AppCompatActivity() {
         binding.apply {
 
             btnAddBusiness.setOnClickListener {
-                addBusiness()
+                if(!isEmpty()) addBusiness()
             }
 
             profileBusiness.setOnClickListener {
@@ -63,6 +64,27 @@ class AddBusinessActivity : AppCompatActivity() {
             btnBack.setOnClickListener {
                 onBackPressed()
             }
+        }
+    }
+
+    private fun isEmpty() : Boolean {
+        binding.apply {
+            if (imageUri== null){
+                Toast.makeText(this@AddBusinessActivity, getString(R.string.emptyPict), Toast.LENGTH_SHORT).show()
+                return true
+            }
+            if(etBusiness.text.trim().isEmpty() && etAddress.text.trim().isEmpty()){
+                etBusiness.error = "This field can't be empty"
+                etAddress.error = "This field can't be empty"
+                return true
+            } else if(etBusiness.text.trim().isEmpty()) {
+                etBusiness.error = "This field can't be empty"
+                return true
+            } else if(etAddress.text.trim().isEmpty()){
+                etAddress.error = "This field can't be empty"
+                return true
+            }
+            else return false
         }
     }
 

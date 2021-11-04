@@ -183,7 +183,6 @@ class Register : AppCompatActivity(), RegisterActivityListener  {
 
     private fun isRegister2Empty() : Boolean {
         fragment2Binding.apply {
-            binding.apply {
                 if(etLocation.text.toString().trim().isEmpty()){
                     etLocation.error = "This field can't be empty"
                     return true
@@ -193,7 +192,6 @@ class Register : AppCompatActivity(), RegisterActivityListener  {
                     return true
                 }
                 else return false
-            }
         }
     }
 

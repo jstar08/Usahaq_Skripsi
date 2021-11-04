@@ -10,6 +10,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.example.usahaq_skripsi.R
 import com.example.usahaq_skripsi.databinding.ActivityEditBusinessBinding
 import com.example.usahaq_skripsi.model.Business
 import com.example.usahaq_skripsi.util.ViewModelFactory
@@ -58,7 +59,7 @@ class EditBusinessActivity : AppCompatActivity() {
             }
 
             btnEditBusiness.setOnClickListener {
-                editBusiness(businessData!!)
+                if (!isEmpty()) editBusiness(businessData!!)
             }
             btnBack.setOnClickListener { onBackPressed() }
         }
@@ -78,6 +79,23 @@ class EditBusinessActivity : AppCompatActivity() {
         viewModel.editBusiness(business)
         if(isSuccess){
             finish()
+        }
+    }
+
+    private fun isEmpty() : Boolean {
+        binding.apply {
+            if(etBusiness.text.trim().isEmpty() && etAddress.text.trim().isEmpty()){
+                etBusiness.error = "This field can't be empty"
+                etAddress.error = "This field can't be empty"
+                return true
+            } else if(etBusiness.text.trim().isEmpty()) {
+                etBusiness.error = "This field can't be empty"
+                return true
+            } else if(etAddress.text.trim().isEmpty()){
+                etAddress.error = "This field can't be empty"
+                return true
+            }
+            else return false
         }
     }
 

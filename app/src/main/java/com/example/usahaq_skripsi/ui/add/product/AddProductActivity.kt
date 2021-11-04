@@ -10,6 +10,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.example.usahaq_skripsi.R
 import com.example.usahaq_skripsi.databinding.ActivityAddProductBinding
 import com.example.usahaq_skripsi.model.Business
 import com.example.usahaq_skripsi.model.Product
@@ -55,7 +56,7 @@ class AddProductActivity : AppCompatActivity() {
             }
 
             btnAddProduct.setOnClickListener {
-                addProduct()
+                if (!isFieldEmpty()) addProduct()
             }
 
             btnBack.setOnClickListener {
@@ -63,6 +64,32 @@ class AddProductActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    private fun isFieldEmpty() : Boolean{
+        binding.apply {
+            if(etProduct.text.isEmpty()){
+                etProduct.error = getString(R.string.emptyField)
+                return true
+            }
+            if (imageUri==null){
+                Toast.makeText(this@AddProductActivity, getString(R.string.emptyPict), Toast.LENGTH_SHORT).show()
+                return true
+            }
+            if(etDesc.text.isEmpty()){
+                etDesc.error = getString(R.string.emptyField)
+                return true
+            }
+            if(etStocks.text.isEmpty()){
+                etStocks.error = getString(R.string.emptyField)
+                return true
+            }
+            if (etSell.text.isEmpty()){
+                etSell.error = getString(R.string.emptyField)
+                return true
+            }
+            else return false
+        }
     }
 
     private fun addProduct(){

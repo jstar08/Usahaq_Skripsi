@@ -232,6 +232,9 @@
     <string name="info_button">Tombol info</string>
     <string name="info_desc">Jika anda perlu melihat tutorial ini kembali, klik tombol ini</string>
     <string name="tab_layout_detail">Detail UMKM</string>
-    <string name="tabDesc">Produk adalah daftar produk yang UMKM anda miliki\n\nPembelian adalah daftar barang yang anda beli yang digunakan untuk produksi atau untuk dijual kembali\n\nPenjualan adalah daftar transaksi penjualan produk anda</string>
-
+    <string name="productDesc">Produk adalah daftar produk yang UMKM anda miliki</string>
+    <string name="purchaseDesc">Pembelian adalah daftar barang yang anda beli yang digunakan untuk produksi atau untuk dijual kembali</string>
+    <string name="sellDesc">Penjualan adalah daftar transaksi penjualan produk anda</string>
+    <string name="emptyField">"Kolom ini tidak boleh kosong"</string>
+    <string name="emptyPict">Anda perlu memasang gambar</string>
 </resources>

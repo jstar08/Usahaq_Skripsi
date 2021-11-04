@@ -11,6 +11,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.example.usahaq_skripsi.R
 import com.example.usahaq_skripsi.databinding.ActivityEditPurchaseBinding
 import com.example.usahaq_skripsi.model.Product
 import com.example.usahaq_skripsi.model.Purchase
@@ -71,7 +72,7 @@ class EditPurchaseActivity : AppCompatActivity() {
             }
 
             btnAddPurchase.setOnClickListener {
-                editPurchase(purchaseData!!)
+                if(!isFieldEmpty()) editPurchase(purchaseData!!)
             }
 
             btnBack.setOnClickListener {
@@ -97,6 +98,29 @@ class EditPurchaseActivity : AppCompatActivity() {
         viewmodel.editPurchase(purchase)
         if(isSuccess){
             finish()
+        }
+    }
+
+    private fun isFieldEmpty() : Boolean{
+        binding.apply {
+            if(etProduct.text.isEmpty()){
+                etProduct.error = getString(R.string.emptyField)
+                return true
+            }
+
+            if(etStocks.text.isEmpty()){
+                etStocks.error = getString(R.string.emptyField)
+                return true
+            }
+            if (etPrice.text.isEmpty()){
+                etPrice.error = getString(R.string.emptyField)
+                return true
+            }
+            if(etDate.text.isEmpty()){
+                etDate.error = getString(R.string.emptyField)
+                return true
+            }
+            else return false
         }
     }
 
