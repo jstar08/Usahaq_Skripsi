@@ -9,5 +9,4 @@ interface RegisterActivityListener {
     fun fragment1(binding: FragmentRegisterPage1Binding)
     fun fragment2(binding: FragmentRegisterPage2Binding)
     fun fragment3(binding: FragmentRegisterPage3Binding)
-    /*fun fragment2ImageChanged(file: File)*/
 }

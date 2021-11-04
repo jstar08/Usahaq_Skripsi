@@ -31,25 +31,6 @@ class RegisterPage1(private val mRegisterActivityListener: RegisterActivityListe
         mRegisterActivityListener.fragment1(binding)
 
         binding.apply {
-            if(etName.text.toString().trim().isEmpty()){
-                Register.isEmptyFields = true
-                etName.error = "This field can't be empty"
-            }
-            if(etEmail.text.toString().trim().isEmpty()){
-                Register.isEmptyFields = true
-                etEmail.error = "This field can't be empty"
-            }
-            if(etPassword.text.toString().trim().isEmpty()){
-                Register.isEmptyFields = true
-                etPassword.error = "This field can't be empty"
-            }
-            if(etName.text.toString().trim().isNotEmpty()
-                && etEmail.text.toString().trim().isNotEmpty()
-                && etPassword.text.toString().trim().isNotEmpty()
-               ){
-                Register.isEmptyFields = false
-            }
-
             tvbtnLogin.setOnClickListener {
                 startActivity(Intent(requireContext(), Login::class.java))
             }

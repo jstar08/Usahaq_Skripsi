@@ -17,6 +17,7 @@ import com.example.usahaq_skripsi.model.ProductSales
 import com.example.usahaq_skripsi.util.ViewModelFactory
 import com.example.usahaq_skripsi.util.productInToProductSales
 import com.example.usahaq_skripsi.viewmodel.ProductViewModel
+import com.facebook.shimmer.ShimmerFrameLayout
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
@@ -28,6 +29,7 @@ class AddSalesTransactionActivity : AppCompatActivity(), SalesProductAdapter.OnC
     private lateinit var sheetBehaviour: BottomSheetBehavior<View>
     private lateinit var sheet: SheetProductSalesBinding
     private lateinit var sheetDialog: BottomSheetDialog
+    private lateinit var shimmerRv : ShimmerFrameLayout
 
     private var business : Business = Business()
     private var productSales = ArrayList<ProductSales>()
@@ -62,6 +64,10 @@ class AddSalesTransactionActivity : AppCompatActivity(), SalesProductAdapter.OnC
         sheetDialog = BottomSheetDialog(this)
         sheetDialog.setContentView(sheet.root)
 
+        shimmerRv = binding.shimmerLayout
+        shimmerRv.visibility = View.VISIBLE
+        binding.rvProduct.visibility = View.GONE
+
         val factory = ViewModelFactory.getInstance(this)
         productViewModel = ViewModelProvider(this, factory)[ProductViewModel::class.java]
 
@@ -83,6 +89,7 @@ class AddSalesTransactionActivity : AppCompatActivity(), SalesProductAdapter.OnC
                     if(query!=null){
                         if(query.isNotEmpty()){
                             binding.rvProduct.visibility = View.GONE
+                            shimmerRv.visibility = View.VISIBLE
                             searchProduct(query)
                         }
                     }
@@ -95,6 +102,7 @@ class AddSalesTransactionActivity : AppCompatActivity(), SalesProductAdapter.OnC
 
             searchView.setOnCloseListener {
                 binding.rvProduct.visibility = View.GONE
+                shimmerRv.visibility = View.VISIBLE
                 showAllProduct(adapter)
                 true
             }
@@ -107,6 +115,7 @@ class AddSalesTransactionActivity : AppCompatActivity(), SalesProductAdapter.OnC
             adapter.productData.clear()
             val productSales = productInToProductSales(result)
             adapter.productData.addAll(productSales)
+            shimmerRv.visibility = View.GONE
             binding.rvProduct.visibility = View.VISIBLE
             binding.rvProduct.adapter = adapter
         })
@@ -117,6 +126,7 @@ class AddSalesTransactionActivity : AppCompatActivity(), SalesProductAdapter.OnC
             adapter.productData.clear()
             val productSales = productInToProductSales(result)
             adapter.productData.addAll(productSales)
+            shimmerRv.visibility = View.GONE
             binding.rvProduct.visibility = View.VISIBLE
             binding.rvProduct.adapter = adapter
         })

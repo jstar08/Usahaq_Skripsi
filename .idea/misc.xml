@@ -9,7 +9,7 @@
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_add_business.xml" value="0.2" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_add_product.xml" value="0.1956521739130435" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_add_purchase.xml" value="0.22418478260869565" />
-        <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_add_sales_transaction.xml" value="0.264" />
+        <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_add_sales_transaction.xml" value="0.2" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_app_intro.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_checkout.xml" value="0.19927536231884058" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/activity_complete_transaction.xml" value="0.14270833333333333" />
@@ -58,6 +58,7 @@
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/shimmer_explore.xml" value="0.21240942028985507" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/shimmer_itembusiness.xml" value="0.21240942028985507" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/shimmer_itemdetailyeartrends.xml" value="0.21240942028985507" />
+        <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/shimmer_itemproduct.xml" value="0.2" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/shimmer_productsold.xml" value="0.4" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/shimmer_profile.xml" value="0.21965579710144928" />
         <entry key="..\:/Users/HP Notebook/AndroidStudioProjects/Usahaq_Skripsi/app/src/main/res/layout/shimmer_todaytrends.xml" value="0.21240942028985507" />

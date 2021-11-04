@@ -50,18 +50,6 @@ class RegisterPage2(private val mRegisterActivityListener: RegisterActivityListe
             tvAddPhoto.setOnClickListener {
                 pickImage()
             }
-            if(etLocation.text.toString().trim().isEmpty()){
-                Register.isEmptyFields = true
-                etLocation.error = "This field can't be empty"
-            }
-            if(etPhoneNumber.text.toString().trim().isEmpty()){
-                Register.isEmptyFields = true
-                etPhoneNumber.error = "This field can't be empty"
-            }
-            if(etLocation.text.toString().trim().isNotEmpty()
-                && etPhoneNumber.text.toString().trim().isNotEmpty()){
-                Register.isEmptyFields = false
-            }
         }
     }
 

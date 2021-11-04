@@ -56,11 +56,6 @@ class Register : AppCompatActivity(), RegisterActivityListener  {
         adapter.list.add(RegisterPage1(mRegisterActivityListener))
         adapter.list.add(RegisterPage2(mRegisterActivityListener))
         adapter.list.add(RegisterPage3(mRegisterActivityListener))
-        isEmptyFields = false
-
-
-
-
 
         val factory = ViewModelFactory.getInstance(this)
         viewModel = ViewModelProvider(this, factory)[AuthViewModel::class.java]
@@ -70,8 +65,19 @@ class Register : AppCompatActivity(), RegisterActivityListener  {
             tvNumber.text = "1"
             tvNextAccept.text = "Next"
             btnNext.setOnClickListener {
-                isEmptyFields = false
-                if(!isEmptyFields) viewpager.currentItem++ }
+                when(viewpager.currentItem){
+                    0-> {
+                        if(!isRegister1Empty()){
+                            viewpager.currentItem++
+                        }
+                    }
+                    1->{
+                        if(!isRegister2Empty()){
+                            viewpager.currentItem++
+                        }
+                    }
+                }
+            }
 
             viewpager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
                 override fun onPageScrolled(
@@ -157,10 +163,43 @@ class Register : AppCompatActivity(), RegisterActivityListener  {
         }
     }
 
+    private fun isRegister1Empty() : Boolean {
+        fragment1Binding.apply {
+            if(etName.text.toString().trim().isEmpty()){
+                etName.error = "This field can't be empty"
+                return true
+            }
+            if(etEmail.text.toString().trim().isEmpty()){
+                etEmail.error = "This field can't be empty"
+                return true
+            }
+            if(etPassword.text.toString().trim().isEmpty()){
+                etPassword.error = "This field can't be empty"
+                return true
+            }
+            else return false
+        }
+    }
+
+    private fun isRegister2Empty() : Boolean {
+        fragment2Binding.apply {
+            binding.apply {
+                if(etLocation.text.toString().trim().isEmpty()){
+                    etLocation.error = "This field can't be empty"
+                    return true
+                }
+                if(etPhoneNumber.text.toString().trim().isEmpty()){
+                    etPhoneNumber.error = "This field can't be empty"
+                    return true
+                }
+                else return false
+            }
+        }
+    }
+
     private fun register() {
         viewModel.createAccount(account)
         viewModel.signIn(account.customEmail.toString(), account.password.toString())
-        /*startActivity(Intent(this , DashboardActivity::class.java))*/
     }
 
     override fun fragment1(binding: FragmentRegisterPage1Binding) {
@@ -176,8 +215,6 @@ class Register : AppCompatActivity(), RegisterActivityListener  {
     }
 
     companion object {
-        var isEmptyFields = false
-        var isSuccess = true
         var imageUrl : String ?= null
     }
 }

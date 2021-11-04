@@ -81,7 +81,10 @@ class FinancialReportActivity : AppCompatActivity(), AdapterView.OnItemSelectedL
             grossProfitPrice.text = "Rp.$grossProfit"
             var totalTransation = purchase.size+sales.size
             transactionPrice.text = totalTransation.toString()
-            var average = totalIncome.div(sales.size)
+            var average =0
+            if(sales.size!=0) {
+                 average = totalIncome.div(sales.size)
+            }
             averagePrice.text = "Rp.$average"
         }
     }
