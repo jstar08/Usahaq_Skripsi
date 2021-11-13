@@ -27,9 +27,6 @@ import android.widget.LinearLayout
 
 import android.widget.TextView
 
-
-
-
 class DetailBusinessActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityDetailBusinessBinding
