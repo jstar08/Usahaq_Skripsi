@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.usahaq_skripsi.databinding.ActivitySplashScreenBinding
 import com.example.usahaq_skripsi.ui.intro.AppIntroActivity
 
@@ -14,6 +15,7 @@ class SplashScreenActivity : AppCompatActivity() {
     private val splashDuration = 1500L
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         super.onCreate(savedInstanceState)
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)

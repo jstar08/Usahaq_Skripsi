@@ -24,6 +24,7 @@ class CheckoutAdapter () : RecyclerView.Adapter<CheckoutAdapter.ViewHolder>()
                 else{
                     tvNote.text = productData.note
                 }
+
             }
         }
 

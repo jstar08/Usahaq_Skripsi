@@ -20,4 +20,10 @@
     <style name="Theme.Usahaq_Skripsi.AppBarOverlay"
         parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.Usahaq_Skripsi.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@drawable/style_temp</item>
+    </style>
+
 </resources>
+

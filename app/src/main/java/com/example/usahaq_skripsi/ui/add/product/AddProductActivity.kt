@@ -31,6 +31,7 @@ class AddProductActivity : AppCompatActivity() {
     private var imageUrl : Uri?= null
     private lateinit var imageId: String
     private lateinit var viewmodel : ProductViewModel
+    private var productExisted : Boolean = false
 
     private var product : Product = Product()
 
@@ -93,17 +94,36 @@ class AddProductActivity : AppCompatActivity() {
     }
 
     private fun addProduct(){
-        product.name = binding.etProduct.text.toString()
-        product.stocks = binding.etStocks.text.toString()
-        product.price = binding.etSell.text.toString()
-        product.description = binding.etDesc.text.toString()
-        product.imageUrl = imageUrl.toString()
-        product.productId = UUID.randomUUID().toString()
-        product.businessId = businessData?.businessId
-        viewmodel.createProduct(product)
-        if(AddBusinessActivity.isSuccess){
-            finish()
-        }
+        viewmodel.showListProduct(businessData?.businessId!!).observe(this,{result ->
+            for(i in result){
+                if(binding.etProduct.text.toString().equals(i.name, ignoreCase = true)){
+                    productExisted = true
+                    product = i
+                }
+            }
+            if(productExisted){
+                val totalStock = product.stocks?.toInt()?.plus(binding.etStocks.text.toString().toInt())
+                product.price = binding.etSell.text.toString()
+                product.stocks = totalStock.toString()
+                binding.etDesc.setText(product.description)
+                product.description = binding.etDesc.text.toString()
+                product.imageUrl = imageUrl.toString()
+                viewmodel.editProduct(product)
+            }
+            else {
+                product.name = binding.etProduct.text.toString()
+                product.stocks = binding.etStocks.text.toString()
+                product.price = binding.etSell.text.toString()
+                product.imageUrl = imageUrl.toString()
+                product.description = binding.etDesc.text.toString()
+                product.productId = UUID.randomUUID().toString()
+                product.businessId = businessData?.businessId
+                viewmodel.createProduct(product)
+            }
+            if(isSuccess){
+                finish()
+            }
+        })
     }
 
     private fun pickImage() {
